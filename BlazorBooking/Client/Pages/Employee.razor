@@ -1,0 +1,12 @@
+﻿@page "/employee"
+
+<PageTitle>Employés Apside</PageTitle>
+
+<h1>Employés</h1>
+
+<div class="m-5 d-flex justify-content-between">
+<h2>Liste des employés</h2>
+    <a class="btn btn-primary" asp-controller="Employee" asp-action="Add"><i class="bi bi-plus-square"></i> Ajouter un employé</a>
+</div>
+
+<EmployeeList />
