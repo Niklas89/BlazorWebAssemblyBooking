@@ -1,0 +1,12 @@
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\bin\Debug\net6.0\BlazorBooking.Shared.deps.json
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\bin\Debug\net6.0\BlazorBooking.Shared.dll
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\bin\Debug\net6.0\BlazorBooking.Shared.pdb
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\BlazorBooking.Shared.csproj.AssemblyReference.cache
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\BlazorBooking.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\BlazorBooking.Shared.AssemblyInfoInputs.cache
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\BlazorBooking.Shared.AssemblyInfo.cs
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\BlazorBooking.Shared.csproj.CoreCompileInputs.cache
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\BlazorBooking.Shared.dll
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\refint\BlazorBooking.Shared.dll
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\BlazorBooking.Shared.pdb
+C:\Users\niklas.edelstam\source\repos\BlazorBooking\BlazorBooking\Shared\obj\Debug\net6.0\ref\BlazorBooking.Shared.dll
