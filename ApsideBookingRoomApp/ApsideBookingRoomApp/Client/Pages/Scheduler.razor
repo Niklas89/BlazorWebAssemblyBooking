@@ -1,0 +1,65 @@
+﻿@page "/Scheduler"
+
+@*@inject AppointmentService appointmentService*@
+
+<TelerikScheduler Data="@Appointments" @bind-Date="@StartDate" Height="600px" @bind-View="@CurrView"
+                  OnUpdate="@UpdateAppointment" OnCreate="@AddAppointment" OnDelete="@DeleteAppointment"
+                  AllowCreate="true" AllowDelete="true" AllowUpdate="true"
+                  ConfirmDelete="true"
+                  IdField="@Id"
+                  StartField="@Start"
+                  EndField="@End"
+                  TitleField="@AppointmentDto"
+                  DescriptionField="@AppointmentDto"
+                  IsAllDayField="@AppointmentDto"
+                  RecurrenceRuleField="@RecurrenceRule"
+                  RecurrenceExceptionsField="@RecurrenceExceptions"
+                  RecurrenceIdField="@RecurrenceId">
+    <SchedulerViews>
+        <SchedulerDayView StartTime="@DayStart" EndTime="@DayEnd" WorkDayStart="@WorkDayStart" WorkDayEnd="@WorkDayEnd" />
+        <SchedulerWeekView StartTime="@DayStart" EndTime="@DayEnd" WorkDayStart="@WorkDayStart" WorkDayEnd="@WorkDayEnd" />
+        <SchedulerMultiDayView StartTime="@DayStart" EndTime="@DayEnd" WorkDayStart="@WorkDayStart" WorkDayEnd="@WorkDayEnd" NumberOfDays="10" />
+        <SchedulerMonthView></SchedulerMonthView>
+        <SchedulerTimelineView StartTime="@DayStart" EndTime="@DayEnd" WorkDayStart="@WorkDayStart" WorkDayEnd="@WorkDayEnd" />
+    </SchedulerViews>
+</TelerikScheduler>
+
+@code {
+    IEnumerable<AppointmentDto> Appointments = new List<AppointmentDto>();
+    public DateTime StartDate { get; set; } = new DateTime(2021, 6, 21);
+    public SchedulerView CurrView { get; set; } = SchedulerView.Week;
+
+    //the time portions are important
+    public DateTime DayStart { get; set; } = new DateTime(2000, 1, 1, 8, 0, 0);
+    public DateTime DayEnd { get; set; } = new DateTime(2000, 1, 1, 20, 0, 0);
+    public DateTime WorkDayStart { get; set; } = new DateTime(2000, 1, 1, 9, 0, 0);
+    public DateTime WorkDayEnd { get; set; } = new DateTime(2000, 1, 1, 17, 0, 0);
+
+    protected override void OnInitialized()
+    {
+        LoadData();
+    }
+
+    private void LoadData()
+    {
+        Appointments = appointmentService.GetAppointments();
+    }
+
+    void UpdateAppointment(SchedulerUpdateEventArgs args)
+    {
+        appointmentService.UpdateAppointment((AppointmentDto)args.Item);
+        LoadData();
+    }
+
+    void AddAppointment(SchedulerCreateEventArgs args)
+    {
+        appointmentService.CreateAppointment((AppointmentDto)args.Item);
+        LoadData();
+    }
+
+    void DeleteAppointment(SchedulerDeleteEventArgs args)
+    {
+        appointmentService.DeleteAppointment((AppointmentDto)args.Item);
+        LoadData();
+    }
+}

@@ -19,4 +19,7 @@ builder.Services.AddMsalAuthentication(options =>
     options.ProviderOptions.DefaultAccessTokenScopes.Add("api://api.id.uri/access_as_user");
 });
 
+// register the Telerik services
+builder.Services.AddTelerikBlazor();
+
 await builder.Build().RunAsync();

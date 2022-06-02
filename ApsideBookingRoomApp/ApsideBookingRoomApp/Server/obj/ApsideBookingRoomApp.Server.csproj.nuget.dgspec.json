@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\ApsideBookingRoomApp.Server.csproj": {}
+    "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\ApsideBookingRoomApp.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj": {
+    "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj",
         "projectName": "ApsideBookingRoomApp.Client",
-        "projectPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj",
-        "packagesPath": "C:\\Users\\niklas.edelstam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\obj\\",
+        "projectPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj",
+        "packagesPath": "C:\\Users\\Lotfi.Djaileb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\niklas.edelstam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lotfi.Djaileb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/xrkKojkvzaLCc4ugjZZ1v2DYGTujDlC3jfjwvol4SFCM9vpkiL/api": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
-                "projectPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj"
+              "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
+                "projectPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj"
               }
             }
           }
@@ -57,23 +63,13 @@
               "target": "Package",
               "version": "[6.0.5, )"
             },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.5, )"
-            },
             "Microsoft.Extensions.Http": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Telerik.UI.for.Blazor.Trial": {
+              "target": "Package",
+              "version": "[3.3.0, )"
             }
           },
           "imports": [
@@ -86,6 +82,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.5, 6.0.5]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -100,17 +102,21 @@
         }
       }
     },
-    "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\ApsideBookingRoomApp.Server.csproj": {
+    "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\ApsideBookingRoomApp.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\ApsideBookingRoomApp.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\ApsideBookingRoomApp.Server.csproj",
         "projectName": "ApsideBookingRoomApp.Server",
-        "projectPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\ApsideBookingRoomApp.Server.csproj",
-        "packagesPath": "C:\\Users\\niklas.edelstam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\obj\\",
+        "projectPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\ApsideBookingRoomApp.Server.csproj",
+        "packagesPath": "C:\\Users\\Lotfi.Djaileb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\niklas.edelstam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lotfi.Djaileb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -118,17 +124,19 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/xrkKojkvzaLCc4ugjZZ1v2DYGTujDlC3jfjwvol4SFCM9vpkiL/api": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj": {
-                "projectPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj"
+              "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj": {
+                "projectPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj"
               },
-              "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
-                "projectPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj"
+              "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
+                "projectPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj"
               }
             }
           }
@@ -161,20 +169,6 @@
               "target": "Package",
               "version": "[6.0.5, )"
             },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.5, )"
-            },
             "Microsoft.Identity.Web": {
               "target": "Package",
               "version": "[1.16.0, )"
@@ -182,10 +176,6 @@
             "Microsoft.Identity.Web.UI": {
               "target": "Package",
               "version": "[1.16.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.3.1, )"
             }
           },
           "imports": [
@@ -210,17 +200,21 @@
         }
       }
     },
-    "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
+    "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj",
         "projectName": "ApsideBookingRoomApp.Shared",
-        "projectPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj",
-        "packagesPath": "C:\\Users\\niklas.edelstam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\niklas.edelstam\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj",
+        "packagesPath": "C:\\Users\\Lotfi.Djaileb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lotfi.Djaileb\\source\\repos\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\niklas.edelstam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lotfi.Djaileb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -228,7 +222,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/xrkKojkvzaLCc4ugjZZ1v2DYGTujDlC3jfjwvol4SFCM9vpkiL/api": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {

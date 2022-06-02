@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("ApsideBookingRoomApp.Server-005BB005-AA62-4040-8E1D-05B95B55A913")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("ApsideBookingRoomApp.Server-948B335A-8131-4DC8-9599-9552A80CE94D")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApsideBookingRoomApp.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
