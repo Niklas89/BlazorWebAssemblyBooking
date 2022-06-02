@@ -1,0 +1,18 @@
+﻿** Met en surbrillance
+     Tables à reconstruire
+       Aucun
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       Aucun
+
+** Actions de l'utilisateur
+     Modifier
+       [dbo].[Booking] (Table)
+       [dbo].[Role] (Table)
+       [dbo].[Rooms] (Table)
+       [dbo].[Users] (Table)
+
+** Actions de support

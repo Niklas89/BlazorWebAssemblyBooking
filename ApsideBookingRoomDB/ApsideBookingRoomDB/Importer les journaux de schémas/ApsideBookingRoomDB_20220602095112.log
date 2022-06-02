@@ -1,0 +1,87 @@
+02/06/2022 11:51:12	Ce journal contient des informations sur l'importation du schéma dans le projet 'ApsideBookingRoomDB' sur l'ordinateur 'GEWKS108' par l'utilisateur 'niklas.edelstam'.
+02/06/2022 11:51:12	L'importation du schéma de base de données a commencé.
+02/06/2022 11:51:18	Collecte des informations d'identification à la base de données
+02/06/2022 11:51:18	Collecte des options de la base de données
+02/06/2022 11:51:18	Collecte de l'option de configuration étendue à la base de données générique
+02/06/2022 11:51:18	Collecte des utilisateurs
+02/06/2022 11:51:18	Collecte des rôles
+02/06/2022 11:51:18	Collecte des rôles d'application
+02/06/2022 11:51:18	Collecte des appartenances aux rôles
+02/06/2022 11:51:18	Collecte des groupes de fichiers
+02/06/2022 11:51:18	Collecte des catalogues de recherche en texte intégral
+02/06/2022 11:51:18	Collecte des assemblys
+02/06/2022 11:51:18	Collecte des certificats
+02/06/2022 11:51:18	Collecte des clés asymétriques
+02/06/2022 11:51:18	Collecte des clés symétriques
+02/06/2022 11:51:18	Collecte des clés symétriques chiffrées
+02/06/2022 11:51:18	Collecte des schémas
+02/06/2022 11:51:18	Collecte des collections de schémas XML
+02/06/2022 11:51:18	Collecte des types de données définis par l'utilisateur
+02/06/2022 11:51:18	Collecte des types définis par l'utilisateur
+02/06/2022 11:51:18	Collecte des types de tables
+02/06/2022 11:51:18	Collecte des clés uniques des types de tables
+02/06/2022 11:51:18	Collecte des clés primaires pour les types de tables
+02/06/2022 11:51:19	Collecte d'index pour types de tables
+02/06/2022 11:51:19	Collecte des contraintes de validation pour les types de tables
+02/06/2022 11:51:19	Collecte des contraintes par défaut pour les types de tables
+02/06/2022 11:51:19	Collecte des fonctions de partition
+02/06/2022 11:51:19	Collecte des schémas de partition
+02/06/2022 11:51:19	Collecte des fonctions
+02/06/2022 11:51:19	Collecte de fonctions cryptées
+02/06/2022 11:51:19	Collecte des agrégats
+02/06/2022 11:51:19	Collecte des procédures
+02/06/2022 11:51:27	Collecte de procédures cryptées
+02/06/2022 11:51:27	Collecte des tables
+02/06/2022 11:51:27	Collecte des clés primaires
+02/06/2022 11:51:27	Collecte des contraintes uniques
+02/06/2022 11:51:27	Collecte des clés étrangères
+02/06/2022 11:51:27	Collecte des contraintes par défaut
+02/06/2022 11:51:27	Collecte des contraintes de validation
+02/06/2022 11:51:27	Collecte des vues
+02/06/2022 11:51:27	Collecte de vues cryptées
+02/06/2022 11:51:27	Collecte des index
+02/06/2022 11:51:27	Collecte des statistiques
+02/06/2022 11:51:27	Collecte des listes de mots vides d'index de recherche en texte intégral
+02/06/2022 11:51:27	Collecte des listes de propriétés de recherche
+02/06/2022 11:51:27	Collecte des propriétés de recherche
+02/06/2022 11:51:27	Collecte des index de recherche en texte intégral
+02/06/2022 11:51:27	Collecte des index de la banque de colonnes
+02/06/2022 11:51:27	Collecte des index spatiaux
+02/06/2022 11:51:27	Collecte des index XML
+02/06/2022 11:51:27	Collecte d'index XML sélectifs
+02/06/2022 11:51:27	Collecte de déclencheurs cryptés
+02/06/2022 11:51:27	Collecte des déclencheurs
+02/06/2022 11:51:27	Collecte des déclencheurs chiffrés et DDL CLR
+02/06/2022 11:51:28	Collecte des DDL triggers
+02/06/2022 11:51:28	Création de contraintes d'arête
+02/06/2022 11:51:28	Collecte des synonymes
+02/06/2022 11:51:28	Collecte des valeurs par défaut
+02/06/2022 11:51:28	Collecte des liaisons UDDT de contrainte de données
+02/06/2022 11:51:28	Collecte des règles
+02/06/2022 11:51:28	Collecte des liaisons UDDT de contrainte de données
+02/06/2022 11:51:28	Collecte des types de messages
+02/06/2022 11:51:28	Collecte des files d'attente
+02/06/2022 11:51:28	Collecte des contrats
+02/06/2022 11:51:28	Collecte des services
+02/06/2022 11:51:28	Collecte des notifications d'événements
+02/06/2022 11:51:28	Collecte des liaisons de service distant
+02/06/2022 11:51:28	Collecte des priorités de Service Broker
+02/06/2022 11:51:28	Collecte des signatures
+02/06/2022 11:51:28	Collection des options de compression de données
+02/06/2022 11:51:28	Collecte des types de séquences
+02/06/2022 11:51:28	Collecte des stratégies de sécurité
+02/06/2022 11:51:28	Collecter les clés de chiffrement de colonne
+02/06/2022 11:51:28	Collecte des clés principales de colonne
+02/06/2022 11:51:28	Collecte des sources de données externes
+02/06/2022 11:51:28	Collecte des formats de fichier externes
+02/06/2022 11:51:28	Collecte des tables externes
+02/06/2022 11:51:28	Collection des propriétés étendues
+02/06/2022 11:51:28	Collecte des assemblys
+02/06/2022 11:51:28	Collecte des informations d'identification
+02/06/2022 11:51:28	Collecte des connexions
+02/06/2022 11:51:28	Collecte des audits du serveur
+02/06/2022 11:51:29	Analyse du projet à la recherche des éléments en double
+02/06/2022 11:51:29	Fin du traitement des éléments en double
+02/06/2022 11:51:30	Importation de la base de données terminée.
+02/06/2022 11:51:30	Un résumé de l'opération d'importation a été enregistré à l'emplacement suivant : C:\Users\niklas.edelstam\source\repos\ApsideBookingRoomDB\ApsideBookingRoomDB\Importer les journaux de schémas\ApsideBookingRoomDB_20220602095112.log.
+02/06/2022 11:51:30	Cliquez sur Terminer pour continuer...
