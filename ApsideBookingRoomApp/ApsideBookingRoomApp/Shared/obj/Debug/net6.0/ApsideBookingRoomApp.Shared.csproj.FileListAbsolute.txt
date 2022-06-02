@@ -10,3 +10,15 @@ C:\Users\Lotfi.Djaileb\source\repos\ApsideBookingRoomApp\ApsideBookingRoomApp\Sh
 C:\Users\Lotfi.Djaileb\source\repos\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\refint\ApsideBookingRoomApp.Shared.dll
 C:\Users\Lotfi.Djaileb\source\repos\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ApsideBookingRoomApp.Shared.pdb
 C:\Users\Lotfi.Djaileb\source\repos\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ref\ApsideBookingRoomApp.Shared.dll
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\bin\Debug\net6.0\ApsideBookingRoomApp.Shared.deps.json
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\bin\Debug\net6.0\ApsideBookingRoomApp.Shared.dll
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\bin\Debug\net6.0\ApsideBookingRoomApp.Shared.pdb
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ApsideBookingRoomApp.Shared.csproj.AssemblyReference.cache
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ApsideBookingRoomApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ApsideBookingRoomApp.Shared.AssemblyInfoInputs.cache
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ApsideBookingRoomApp.Shared.AssemblyInfo.cs
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ApsideBookingRoomApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ApsideBookingRoomApp.Shared.dll
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\refint\ApsideBookingRoomApp.Shared.dll
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ApsideBookingRoomApp.Shared.pdb
+C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Shared\obj\Debug\net6.0\ref\ApsideBookingRoomApp.Shared.dll
