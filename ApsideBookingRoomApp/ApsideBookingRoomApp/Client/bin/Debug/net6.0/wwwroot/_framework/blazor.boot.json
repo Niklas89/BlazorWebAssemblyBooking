@@ -207,15 +207,15 @@
       "mscorlib.dll": "sha256-ghlJNtzzYlKIliGPuf0A0Yu6dmLycSx3F9uyeddFb\/g=",
       "netstandard.dll": "sha256-qpOz\/RBwhlIYfaE2GDEmjiproxkvSf2b9GeqHxvH+lg=",
       "System.Private.CoreLib.dll": "sha256-sfzSZ3YKC2rpF77TVOKLuPgQag93QXr9U4AUc9d\/LKA=",
-      "ApsideBookingRoomApp.Shared.dll": "sha256-whn6TtnAAm4gkb\/aT49YT\/fXWDEQ6D+ZsPDaYkesDyI=",
-      "ApsideBookingRoomApp.Client.dll": "sha256-g+dSfAmpfTMWS2jPJStAkFdouBzySHDDpZmqG9jAshY="
+      "ApsideBookingRoomApp.Shared.dll": "sha256-7ZNU6YIr8dhVXNj76X5uUKvWefRleyrkLDhbahpLUXM=",
+      "ApsideBookingRoomApp.Client.dll": "sha256-aE59z+\/NRnWwRT9PHHkC5+TNWl2E6+5E4Kg894ls5GQ="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "ApsideBookingRoomApp.Shared.pdb": "sha256-Li3E+YRu577YvaXYx96qmbtvNscTu62RNx\/fuYC2nrw=",
-      "ApsideBookingRoomApp.Client.pdb": "sha256-88jQ06RCzDzURq1+l+ifTkrdDF1ltetcOQrQRc7Gvxg="
+      "ApsideBookingRoomApp.Shared.pdb": "sha256-6gNsZztUwBr1aYnqbujYANbBaQVdNernMARFan32ya4=",
+      "ApsideBookingRoomApp.Client.pdb": "sha256-6hjajAvQiWd1VCFQwwV+1h5+fV9vzeUo7\/lccHRwBnA="
     },
     "runtime": {
       "dotnet.6.0.5.wpoj3fm9po.js": "sha256-783uOt0jgblQfP6Yz5TJeuW2xxtl6UHZQPngZtCz79U=",
