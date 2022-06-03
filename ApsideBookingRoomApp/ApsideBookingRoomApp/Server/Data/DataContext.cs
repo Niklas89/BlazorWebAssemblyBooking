@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ApsideBookingRoomApp.Server.Data
 {
-    public partial class ApsideBookingRoomDBContext : DbContext
+    public partial class DataContext : DbContext
     {
-        public ApsideBookingRoomDBContext()
+        public DataContext()
         {
         }
 
-        public ApsideBookingRoomDBContext(DbContextOptions<ApsideBookingRoomDBContext> options)
+        public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
         }

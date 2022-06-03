@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5gzE6XEBoww0kg38l8SKNNCmIU/b9m81w3/Hdo4oXTo=",
+  "Hash": "Z1zAu4WXkCJfHaLoo3yn/Jw3o3gaa8mr9BQkU+SSz4o=",
   "Source": "ApsideBookingRoomApp.Server",
   "BasePath": "_content/ApsideBookingRoomApp.Server",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "ApsideBookingRoomApp.Client",
       "GetPublishAssetsTargets": "ComputeFilesToPublish;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "BuildProjectReferences=false;ResolveAssemblyReferencesFindRelatedSatellites=true;_PublishingBlazorWasmProject=true",
+      "AdditionalPublishProperties": "BuildProjectReferences=false;ResolveAssemblyReferencesFindRelatedSatellites=true;_PublishingBlazorWasmProject=true;Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "NoBuild;RuntimeIdentifier;WebPublishProfileFile;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
     }
   ],
@@ -335,6 +335,23 @@
       "OriginalItemSpec": "C:\\Users\\niklas.edelstam\\.nuget\\packages\\humanizer.core\\2.8.26\\lib\\netstandard2.0\\Humanizer.dll"
     },
     {
+      "Identity": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
+      "SourceId": "ApsideBookingRoomApp.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt.dat",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "native",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\native\\icudt.dat"
+    },
+    {
       "Identity": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt_CJK.dat",
       "SourceId": "ApsideBookingRoomApp.Client",
       "SourceType": "Project",
@@ -384,23 +401,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
-    },
-    {
-      "Identity": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
-      "SourceId": "ApsideBookingRoomApp.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt.dat",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "native",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\native\\icudt.dat"
     },
     {
       "Identity": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
@@ -8189,23 +8189,6 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "ApsideBookingRoomApp.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
-    },
-    {
       "Identity": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "ApsideBookingRoomApp.Client",
       "SourceType": "Project",
@@ -8306,6 +8289,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Identity": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "ApsideBookingRoomApp.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
