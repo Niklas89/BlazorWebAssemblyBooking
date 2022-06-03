@@ -8,13 +8,13 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ApsideBookingRoomApp.Server
 build_property.RootNamespace = ApsideBookingRoomApp.Server
-build_property.ProjectDir = C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomApp\ApsideBookingRoomApp\Server\
+build_property.ProjectDir = C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Server\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomApp\ApsideBookingRoomApp\Server
+build_property.MSBuildProjectDirectory = C:\Users\niklas.edelstam\github\ApsideBookingRoomApp\ApsideBookingRoomApp\ApsideBookingRoomApp\Server
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lotfi.Djaileb/Documents/GitHub/BlazorWebAssemblyBooking/ApsideBookingRoomApp/ApsideBookingRoomApp/Server/Pages/Error.cshtml]
+[C:/Users/niklas.edelstam/github/ApsideBookingRoomApp/ApsideBookingRoomApp/ApsideBookingRoomApp/Server/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
