@@ -2,6 +2,12 @@
 ApsideBookingRoomApp/.vs/
 ApsideBookingRoomApp/bin/
 ApsideBookingRoomApp/obj/
+ApsideBookingRoomApp/Client/bin/
+ApsideBookingRoomApp/Client/obj/
+ApsideBookingRoomApp/Server/bin/
+ApsideBookingRoomApp/Server/obj/
+ApsideBookingRoomApp/Shared/bin/
+ApsideBookingRoomApp/Shared/obj/
 ApsideBookingRoomDB/.vs/
 ApsideBookingRoomDB/bin/
 ApsideBookingRoomDB/obj/
