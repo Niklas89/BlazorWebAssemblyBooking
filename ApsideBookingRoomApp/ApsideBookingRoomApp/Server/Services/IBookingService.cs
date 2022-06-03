@@ -2,6 +2,6 @@
 {
     public interface IBookingService
     {
-        Task<ServiceResponse<List<Booking>>> GetBookings();
+        Task<ServiceResponse<List<BookingDto>>> GetBookings();
     }
 }

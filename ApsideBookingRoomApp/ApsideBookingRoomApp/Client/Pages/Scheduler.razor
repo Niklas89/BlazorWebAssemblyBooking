@@ -3,11 +3,15 @@
 
 
 <TelerikScheduler Data="@BookingService.Bookings" @bind-Date="@StartDate" Height="600px" @bind-View="@CurrView"
-                  TitleField="@(nameof(Booking.Subject))"
-                  DescriptionField="@(nameof(Booking.Comment))"
-                  StartField="@(nameof(Booking.StartDate))"
-                  EndField="@(nameof(Booking.EndDate))"
-                  IdField="@(nameof(Booking.IdBooking))">
+                  TitleField="@(nameof(BookingDto.Subject))"
+                  DescriptionField="@(nameof(BookingDto.Comment))"
+                  StartField="@(nameof(BookingDto.StartDate))"
+                  EndField="@(nameof(BookingDto.EndDate))"
+                  IsAllDayField="@(nameof(BookingDto.IsAllDay))"
+                  IdField="@(nameof(BookingDto.IdBooking))"
+                  RecurrenceRuleField="@(nameof(BookingDto.RecurrenceRule))"
+                  RecurrenceExceptionsField="@(nameof(BookingDto.RecurrenceExceptions))"
+                  RecurrenceIdField="@(nameof(BookingDto.RecurrenceId))">
     <SchedulerViews>
         <SchedulerDayView StartTime="@DayStart" />
         <SchedulerWeekView StartTime="@DayStart" />
@@ -17,7 +21,7 @@
 
 @code {
     public SchedulerView CurrView { get; set; } = SchedulerView.Week;
-    public DateTime StartDate { get; set; } = new DateTime(2022, 06, 01);
+    public DateTime StartDate { get; set; } = new DateTime(2019, 12, 2);
     public DateTime DayStart { get; set; } = new DateTime(2000, 1, 1, 8, 0, 0); //the time portion is important
 
    /*
@@ -83,10 +87,9 @@
         {
             ID = Guid.NewGuid();
         }
-
-    } */
+        
     
-
+    */
     protected override async Task OnInitializedAsync()
     {
        await BookingService.GetBookings();

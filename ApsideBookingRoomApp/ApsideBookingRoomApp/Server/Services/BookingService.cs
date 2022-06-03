@@ -9,10 +9,22 @@
             _context = context;
         }
 
-        public async Task<ServiceResponse<List<Booking>>> GetBookings()
+        public async Task<ServiceResponse<List<BookingDto>>> GetBookings()
         {
-            var bookings = await _context.Bookings.ToListAsync();
-            return new ServiceResponse<List<Booking>>
+            var bookings = await _context.Bookings.Select(b => new BookingDto
+            {
+                IdBooking = b.IdBooking,
+                Subject = b.Subject,
+                StartDate = b.StartDate,
+                EndDate = b.EndDate,
+                Comment = b.Comment,
+                IdRoom = b.IdRoom,
+                IsAllDay = false,
+                RecurrenceRule = "",
+                RecurrenceExceptions = new List<DateTime>(),
+                RecurrenceId = Guid.NewGuid()
+        }).ToListAsync();
+            return new ServiceResponse<List<BookingDto>>
             {
                 Data = bookings
             };

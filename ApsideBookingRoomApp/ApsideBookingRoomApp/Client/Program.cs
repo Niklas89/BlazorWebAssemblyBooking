@@ -1,5 +1,6 @@
 global using System.Net.Http.Json;
 global using ApsideBookingRoomApp.Shared;
+global using ApsideBookingRoomApp.Shared.Dto;
 global using ApsideBookingRoomApp.Client.Services;
 using ApsideBookingRoomApp.Client;
 using Microsoft.AspNetCore.Components.Web;

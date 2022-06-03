@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApsideBookingRoomApp.Server.Controllers
 {
@@ -14,7 +15,7 @@ namespace ApsideBookingRoomApp.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponse<List<Booking>>>> GetBookings()
+        public async Task<ActionResult<ServiceResponse<List<BookingDto>>>> GetBookings()
         {
             var result = await _bookingService.GetBookings();
             return Ok(result);

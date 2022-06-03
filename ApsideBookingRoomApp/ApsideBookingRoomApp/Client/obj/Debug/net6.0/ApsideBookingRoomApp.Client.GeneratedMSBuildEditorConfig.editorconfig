@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NoZWR1bGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/niklas.edelstam/github/ApsideBookingRoomApp/ApsideBookingRoomApp/ApsideBookingRoomApp/Client/Pages/Scheduler2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NoZWR1bGVyMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/niklas.edelstam/github/ApsideBookingRoomApp/ApsideBookingRoomApp/ApsideBookingRoomApp/Client/Shared/LoginDisplay.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,4 +1,5 @@
 global using ApsideBookingRoomApp.Shared;
+global using ApsideBookingRoomApp.Shared.Dto;
 global using Microsoft.EntityFrameworkCore;
 global using ApsideBookingRoomApp.Server.Services;
 global using ApsideBookingRoomApp.Server.Data;
