@@ -1,3 +1,7 @@
+global using System.Net.Http.Json;
+global using ApsideBookingRoomApp.Shared;
+global using ApsideBookingRoomApp.Server;
+global using ApsideBookingRoomApp.Client.Services;
 using ApsideBookingRoomApp.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
@@ -12,6 +16,7 @@ builder.Services.AddHttpClient("ApsideBookingRoomApp.ServerAPI", client => clien
 
 // Supply HttpClient instances that include access tokens when making requests to the server project
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("ApsideBookingRoomApp.ServerAPI"));
+builder.Services.AddScoped<IBookingService, BookingService>();
 
 builder.Services.AddMsalAuthentication(options =>
 {
