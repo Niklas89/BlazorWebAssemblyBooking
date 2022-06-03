@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ApsideBookingRoomApp.Server
+namespace ApsideBookingRoomApp.Shared
 {
     public partial class User
     {

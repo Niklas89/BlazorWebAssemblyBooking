@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject IBookingService BookingService
 
 <PageTitle>Index</PageTitle>
 
@@ -9,3 +10,35 @@ Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 <TelerikButton>Say Hello</TelerikButton>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach(var bookings in BookingService.Bookings)
+        {
+         <tr>
+              <th scope="row">@bookings.IdBooking</th>
+              <td>@bookings.Subject</td>
+              <td>@bookings.StartDate</td>
+              <td>@bookings.EndDate</td>
+              <td>@bookings.Comment</td>
+        </tr>
+        }
+       
+  </tbody>
+</table>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+       await BookingService.GetBookings();
+    }
+}
