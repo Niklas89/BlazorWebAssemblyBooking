@@ -1,29 +1,29 @@
     ======  ======
-    Time:03/06/2022 11:37:29
+    Time:03/06/2022 11:45:25
     Title: Initiate log
     Message: 
-    Time:03/06/2022 11:37:29
+    Time:03/06/2022 11:45:25
     Title: Initiate InternalManager
     Message: Trying to Validate License
-    Time:03/06/2022 11:37:29
+    Time:03/06/2022 11:45:25
     Title: Requesting EVT
     Message: EVTP
-    Time:03/06/2022 11:37:29
+    Time:03/06/2022 11:45:25
     Title: Requesting Validation
     Message: ILMValidate
-    Time:03/06/2022 11:37:29
+    Time:03/06/2022 11:45:25
     Title: LICENSER
     Message: TRL MODE
-    Time:03/06/2022 11:37:29
+    Time:03/06/2022 11:45:25
     Title: LICENSER
     Message: DS LEFT29
-    Time:03/06/2022 11:37:29
+    Time:03/06/2022 11:45:26
     Title: LICENSER
     Message: DT MARK PASSED29.00:00:00
-    Time:03/06/2022 11:37:34
+    Time:03/06/2022 11:45:32
     Title: Requesting Validation
     Message: ILMValidate True
-    Time:03/06/2022 11:37:34
+    Time:03/06/2022 11:45:32
     Title: Requesting Validation
     Message: ILMValidate True Trial
     Entering constructor for: Telerik.Blazor.VSPackage.VsPackage
@@ -38,6 +38,8 @@
     Entering Initialize() for: Telerik.KendoUI.Mvc.VSPackage.VsPackage
     Entering constructor for: Telerik.Web.UI.VSPackage.VSPackage
     Entering Initialize() for: Telerik.Web.UI.VSPackage.VSPackage
+    TR: Assembly resolution failed: Telerik.VSX.Notifications.1.2.0.0.XmlSerializers, Version=1.2.0.0, Culture=neutral, PublicKeyToken=0dfdc51bd06071b4
+    TR: Assembly resolution failed: Telerik.VSX.Tracking.XmlSerializers, Version=3.1.0.8, Culture=neutral, PublicKeyToken=dac83c33184dc9bb
     Product creation from registry failed for:HKEY_LOCAL_MACHINE\Software\Telerik\Reporting\Net4.0
     Install dir: 
     Version: 
@@ -45,24 +47,6 @@
     Install dir: 
     Version: 
     No Telerik Reporting products found in registry
-    All solution projects: 3
-    Project Wraps: 3
-    All solution projects: 3
-    Project Wraps: 3
-    All solution projects: 3
-    Project Wraps: 3
-    All solution projects: 3
-    Project Wraps: 3
-    All solution projects: 3
-    Project Wraps: 3
-    All solution projects: 3
-    Project Wraps: 3
-    All solution projects: 3
-    Project Wraps: 3
-    All solution projects: 3
-    Project Wraps: 3
-    All solution projects: 3
-    Project Wraps: 3
     TR: Assembly resolution failed: Telerik.JustMock.VS.Async.Implementation.XmlSerializers, Version=2022.2.511.1, Culture=neutral, PublicKeyToken=602a9bfd8c8c4ad7
     TR: Assembly resolution failed: Telerik.Windows.Themes.VisualStudio2013, Culture=neutral
     Entering constructor for: Telerik.WinControls.Converter.VSPackage.VSPackage
@@ -70,16 +54,34 @@
     Entering constructor for: Telerik.WinControls.VSPackage.VSPackage
     Entering Initialize() for: Telerik.WinControls.VSPackage.VSPackage
     TR: Assembly resolution failed: Telerik.VSX.Tracking.XmlSerializers, Version=3.1.0.8, Culture=neutral, PublicKeyToken=dac83c33184dc9bb
-    TR: Assembly resolution failed: Telerik.VSX.Notifications.1.2.0.0.XmlSerializers, Version=1.2.0.0, Culture=neutral, PublicKeyToken=0dfdc51bd06071b4
-    TR: Assembly resolution failed: Telerik.VSX.Tracking.XmlSerializers, Version=3.1.0.8, Culture=neutral, PublicKeyToken=dac83c33184dc9bb
+    Entering constructor for: Telerik.KendoUI.ASP.NET.Core.VSPackage.VsPackage
+    Entering constructor for: Telerik.KendoUI.ASP.NET.Core.VSPackage.VsPackage
+    Entering Initialize() for: Telerik.KendoUI.ASP.NET.Core.VSPackage.VsPackage
+    All solution projects: 3
+    Project Wraps: 3
+    All solution projects: 3
+    Project Wraps: 3
+    All solution projects: 3
+    Project Wraps: 3
+    All solution projects: 3
+    Project Wraps: 3
+    All solution projects: 3
+    Project Wraps: 3
+    All solution projects: 3
+    Project Wraps: 3
+    All solution projects: 3
+    Project Wraps: 3
+    All solution projects: 3
+    Project Wraps: 3
+    All solution projects: 3
+    Project Wraps: 3
+    Entering constructor for: Telerik.Windows.WPF.VSPackage.VSPackage
+    Entering Initialize() for: Telerik.Windows.WPF.VSPackage.VSPackage
     TR: Assembly resolution failed: Telerik.JustMock.AddIn.XmlSerializers, Version=2022.2.511.1, Culture=neutral, PublicKeyToken=602a9bfd8c8c4ad7
     devenv.exe Warning: 0 : EnvDTE.OutputWindowPane GetOutputWindowPane(System.String, Boolean): exception thrown while getting output window pane 'JustMock': System.Runtime.InteropServices.COMException (0x80010108): L’objet invoqué s’est déconnecté de ses clients. (Exception de HRESULT : 0x80010108 (RPC_E_DISCONNECTED))
    à EnvDTE80.DTE2.get_Windows()
    à Telerik.JustMock.VS.Async.JustMockPackageImplementation.GetOutputWindowPane(String name, Boolean activate)
-VS.Async.JustMockPackageImplementation.GetOutputWindowPane(String name, Boolean activate)
-: System.Runtime.InteropServices.COMException (0x80010108): L’objet invoqué s’est déconnecté de ses clients. (Exception de HRESULT : 0x80010108 (RPC_E_DISCONNECTED))
-   à EnvDTE80.DTE2.get_Windows()
-   à Telerik.JustMock.VS.Async.JustMockPackageImplementation.GetOutputWindowPane(String name, Boolean activate)
+ring name, Boolean activate)
 vDTE.OutputWindowPane GetOutputWindowPane(System.String, Boolean): exception thrown while getting output window pane 'JustMock': System.Runtime.InteropServices.COMException (0x80010108): L’objet invoqué s’est déconnecté de ses clients. (Exception de HRESULT : 0x80010108 (RPC_E_DISCONNECTED))
    à EnvDTE80.DTE2.get_Windows()
    à Telerik.JustMock.VS.Async.JustMockPackageImplementation.GetOutputWindowPane(String name, Boolean activate)
