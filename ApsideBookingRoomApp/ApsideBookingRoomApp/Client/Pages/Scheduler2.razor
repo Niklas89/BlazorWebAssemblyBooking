@@ -22,6 +22,7 @@
     public DateTime StartDate { get; set; } = new DateTime(2019, 12, 2);
     public DateTime DayStart { get; set; } = new DateTime(2000, 1, 1, 8, 0, 0); //the time portion is important
 
+
     List<SchedulerAppointment> Appointments { get; set; }
 
     async Task UpdateAppointment(SchedulerUpdateEventArgs args)
@@ -118,6 +119,7 @@
 
     // the following static class mimics an actual data service that handles the actual data source
     // replace it with your actual service through the DI, this only mimics how the API can look like and works for this standalone page
+    
     public static class MyService
     {
         private static List<SchedulerAppointment> _data { get; set; } = new List<SchedulerAppointment>()
@@ -203,5 +205,5 @@
 
             _data.Remove(itemToDelete);
         }
-    }
+    } 
 }
