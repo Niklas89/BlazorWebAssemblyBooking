@@ -1906,7 +1906,7 @@
     "Telerik.DataSource.Trial/2.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FgZKebfBk+FyxwNGbqU8e6Tzhhq8HdKmQAaSjcotER/tvS8KEh+U9rdjmAZaluZVDCd3cXiE62RBCoy2VW8oTg==",
+      "sha512": "sha512-wSHFmfUuFulwxBss26l1XOpuIic3eF/VarDmyZfNHIhq3B/tfCbZKWyEqiSYElVhbAO37x6b4iH0PyBRFpfDfg==",
       "path": "telerik.datasource.trial/2.1.1",
       "hashPath": "telerik.datasource.trial.2.1.1.nupkg.sha512"
     },
