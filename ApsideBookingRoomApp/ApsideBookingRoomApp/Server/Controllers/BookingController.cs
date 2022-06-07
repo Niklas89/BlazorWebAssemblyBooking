@@ -20,5 +20,12 @@ namespace ApsideBookingRoomApp.Server.Controllers
             var result = await _bookingService.GetBookings();
             return Ok(result);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<ServiceResponse<BookingDto>>> CreateBooking(BookingDto booking)
+        {
+            var result = await _bookingService.CreateBooking(booking);
+            return Ok(result);
+        }
     }
 }

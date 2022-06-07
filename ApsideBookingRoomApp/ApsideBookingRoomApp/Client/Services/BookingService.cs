@@ -23,10 +23,14 @@ namespace ApsideBookingRoomApp.Client.Services
             Bookings = await Read();
         }
 
-        public async Task Create(BookingDto itemToInsert)
+        public async Task<BookingDto> Create(BookingDto itemToInsert)
         {
             itemToInsert.IdBooking = Guid.NewGuid();
-            Bookings.Insert(0, itemToInsert);
+            var result = await _http.PostAsJsonAsync("api/booking", itemToInsert);
+            var newProduct = (await result.Content.ReadFromJsonAsync<ServiceResponse<BookingDto>>()).Data;
+            return newProduct;
+
+            //Bookings.Insert(0, itemToInsert);
         }
 
         public async Task<List<BookingDto>> Read()

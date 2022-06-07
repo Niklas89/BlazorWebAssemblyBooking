@@ -30,5 +30,12 @@
             };
 
         }
+
+        public async Task<ServiceResponse<BookingDto>> CreateBooking(BookingDto booking)
+        {
+            _context.Bookings.Add(booking);
+            await _context.SaveChangesAsync();
+            return new ServiceResponse<BookingDto> { Data = booking };
+        }
     }
 }
