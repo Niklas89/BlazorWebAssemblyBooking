@@ -1,33 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {}
+    "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
+    "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj",
         "projectName": "ApsideBookingRoomApp.Shared",
-        "projectPath": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj",
-        "packagesPath": "C:\\Users\\niklas.edelstam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj",
+        "packagesPath": "C:\\Users\\Lotfi.Djaileb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\niklas.edelstam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
+          "C:\\Users\\Lotfi.Djaileb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/v3/index.json": {},
-          "https://telerik.com": {}
+          "https://nuget.devexpress.com/xrkKojkvzaLCc4ugjZZ1v2DYGTujDlC3jfjwvol4SFCM9vpkiL/api": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
