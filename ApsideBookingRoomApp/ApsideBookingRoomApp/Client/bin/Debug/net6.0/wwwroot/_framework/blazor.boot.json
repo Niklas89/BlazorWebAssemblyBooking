@@ -231,14 +231,14 @@
       "netstandard.dll": "sha256-EzmKN+AbNEDjd5nSFsILG121Oz5G6y6srA1Yq1Jo67k=",
       "System.Private.CoreLib.dll": "sha256-cC5\/4QFeEaYp0kJy5xgdDbYrYr8Rflocn4O4\/B\/5l0I=",
       "ApsideBookingRoomApp.Shared.dll": "sha256-p1\/BUckjvK\/Xcp9ip7TkDeMFiBh6ZYWmQbu5Z\/M7IFE=",
-      "ApsideBookingRoomApp.Client.dll": "sha256-xpscCfuYGYwgcfDzlCySvZ0otc2WFTSz12T\/1qHytco="
+      "ApsideBookingRoomApp.Client.dll": "sha256-7rz5F3KNDowZpV0ZYdXcnDAUYlZeVfOJDm+Zi3er+CU="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "ApsideBookingRoomApp.Shared.pdb": "sha256-bqb7Jdp5ZmKL2w\/Bm3YHCHseDQMFDY3mLanuHh5uJCk=",
-      "ApsideBookingRoomApp.Client.pdb": "sha256-X7D\/jpzgCFjFcK0TokYHY4cj7TvYZ3+eZaQOtEJTGt0="
+      "ApsideBookingRoomApp.Client.pdb": "sha256-WHqyFtCln+cNXWydOFU8ELe2cHsXbxS37+5D4FLJlx8="
     },
     "runtime": {
       "dotnet.6.0.4.dckq00jdfr.js": "sha256-jOfMbaXeCm62yx0cPv3Z19yvcknDcZyUnruATVPdGPE=",
