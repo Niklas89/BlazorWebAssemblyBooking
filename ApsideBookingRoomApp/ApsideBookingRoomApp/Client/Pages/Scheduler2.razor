@@ -2,7 +2,16 @@
 @inject IBookingService BookingService
 
 
-<TelerikScheduler Data="@Appointments"
+<TelerikScheduler Data="@BookingService.Bookings"
+                    TitleField="@(nameof(BookingDto.Subject))"
+                  DescriptionField="@(nameof(BookingDto.Comment))"
+                  StartField="@(nameof(BookingDto.StartDate))"
+                  EndField="@(nameof(BookingDto.EndDate))"
+                  IsAllDayField="@(nameof(BookingDto.IsAllDay))"
+                  IdField="@(nameof(BookingDto.IdBooking))"
+                  RecurrenceRuleField="@(nameof(BookingDto.RecurrenceRule))"
+                  RecurrenceExceptionsField="@(nameof(BookingDto.RecurrenceExceptions))"
+                  RecurrenceIdField="@(nameof(BookingDto.RecurrenceId))"
                   OnUpdate="@UpdateAppointment"
                   OnCreate="@AddAppointment"
                   OnDelete="@DeleteAppointment"
@@ -19,9 +28,78 @@
 @code {
     // sample data and scheduler settings
     public SchedulerView CurrView { get; set; } = SchedulerView.Week;
-    public DateTime StartDate { get; set; } = new DateTime(2019, 12, 2);
+    public DateTime StartDate { get; set; } = new DateTime(2022, 06, 6);
     public DateTime DayStart { get; set; } = new DateTime(2000, 1, 1, 8, 0, 0); //the time portion is important
 
+    async Task UpdateAppointment(SchedulerUpdateEventArgs args)
+    {
+        BookingDto item = (BookingDto)args.Item;
+
+        // perform actual data source operations here through your service
+        await BookingService.Update(item);
+
+        // update the local view-model data with the service data
+        await BookingService.GetBookingsClient();
+    }
+
+    async Task AddAppointment(SchedulerCreateEventArgs args)
+    {
+        BookingDto item = args.Item as BookingDto;
+
+        // perform actual data source operations here through your service
+        await BookingService.Create(item);
+
+        // update the local view-model data with the service data
+        await BookingService.GetBookingsClient();
+    }
+
+    async Task DeleteAppointment(SchedulerDeleteEventArgs args)
+    {
+        BookingDto item = (BookingDto)args.Item;
+
+        // perform actual data source operations here through your service
+        await BookingService.Delete(item);
+
+        // update the local view-model data with the service data
+        await BookingService.GetBookingsClient();
+
+        // see the comments in the service mimic method below.
+    }
+
+    //Handlers for application logic flexibility
+    void EditHandler(SchedulerEditEventArgs args)
+    {
+        BookingDto item = args.Item as BookingDto;
+        if (!args.IsNew) // an edit operation, otherwise - an insert operation
+        {
+            // you can prevent opening an item for editing based on a condition
+            if (item.Subject.Contains("vet", StringComparison.InvariantCultureIgnoreCase))
+            {
+                args.IsCancelled = true;
+            }
+        }
+        else
+        {
+            // new appointment
+            DateTime SlotStart = args.Start; // the start of the slot the user clicked
+            DateTime SlotEnd = args.End; // the start of the slot the user clicked
+            bool InsertInAllDay = args.IsAllDay; // whether the user started insertion in the All Day row
+        }
+    }
+
+    void CancelHandler(SchedulerCancelEventArgs args)
+    {
+        // you can know when a user wanted to modify an appointment but decided not to
+        // the model you get contains the new data from the edit form so you can see what they did
+        BookingDto item = args.Item as BookingDto;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+       await BookingService.GetBookings();
+    }
+
+    /*
 
     List<SchedulerAppointment> Appointments { get; set; }
 
@@ -205,5 +283,5 @@
 
             _data.Remove(itemToDelete);
         }
-    } 
+    } */
 }
