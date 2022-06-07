@@ -31,11 +31,26 @@
 
         }
 
-        public async Task<ServiceResponse<BookingDto>> CreateBooking(BookingDto booking)
+        
+        public async Task<ServiceResponse<BookingDto>> CreateBooking(BookingDto bookingDto)
         {
+            Booking booking = new Booking { Subject = bookingDto.Subject,
+                StartDate = bookingDto.StartDate,
+                EndDate = bookingDto.EndDate,
+                Comment = bookingDto.Comment,
+                // RowVersion = null,
+                RowVersion = System.Text.Encoding.UTF8.GetBytes("0x00000000000007ED"),
+                CreationUserId = Guid.Parse("A57C8CE4-A0F1-485D-9A67-1D3D5E64D765"),
+                ModificationUserId = Guid.Parse("A57C8CE4-A0F1-485D-9A67-1D3D5E64D765"),
+                CreationDate = DateTime.Now,
+                ModificationDate = DateTime.Now,
+                IdRoom = Guid.Parse("E665736C-35C2-419F-8A52-2F93A4C5231A"),
+            };
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
-            return new ServiceResponse<BookingDto> { Data = booking };
-        }
+            //return await GetBookings();
+
+            return new ServiceResponse<BookingDto> { Data = bookingDto };
+        } 
     }
 }

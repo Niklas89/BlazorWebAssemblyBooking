@@ -15,6 +15,7 @@ namespace ApsideBookingRoomApp.Shared
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string? Comment { get; set; }
+
         public byte[] RowVersion { get; set; } = null!;
         public Guid CreationUserId { get; set; }
         public Guid ModificationUserId { get; set; }

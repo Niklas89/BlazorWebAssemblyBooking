@@ -6393,7 +6393,7 @@
       ]
     },
     "Telerik.DataSource.Trial/2.1.1": {
-      "sha512": "wSHFmfUuFulwxBss26l1XOpuIic3eF/VarDmyZfNHIhq3B/tfCbZKWyEqiSYElVhbAO37x6b4iH0PyBRFpfDfg==",
+      "sha512": "FgZKebfBk+FyxwNGbqU8e6Tzhhq8HdKmQAaSjcotER/tvS8KEh+U9rdjmAZaluZVDCd3cXiE62RBCoy2VW8oTg==",
       "type": "package",
       "path": "telerik.datasource.trial/2.1.1",
       "files": [
@@ -6498,41 +6498,40 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lotfi.Djaileb\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\niklas.edelstam\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj",
+      "projectUniqueName": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj",
       "projectName": "ApsideBookingRoomApp.Client",
-      "projectPath": "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj",
-      "packagesPath": "C:\\Users\\Lotfi.Djaileb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\obj\\",
+      "projectPath": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\ApsideBookingRoomApp.Client.csproj",
+      "packagesPath": "C:\\Users\\niklas.edelstam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lotfi.Djaileb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\niklas.edelstam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.devexpress.com/xrkKojkvzaLCc4ugjZZ1v2DYGTujDlC3jfjwvol4SFCM9vpkiL/api": {},
-        "https://nuget.telerik.com/v3/index.json": {}
+        "https://nuget.telerik.com/v3/index.json": {},
+        "https://telerik.com": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
-              "projectPath": "C:\\Users\\Lotfi.Djaileb\\Documents\\GitHub\\BlazorWebAssemblyBooking\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj"
+            "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj": {
+              "projectPath": "C:\\Users\\niklas.edelstam\\github\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared\\ApsideBookingRoomApp.Shared.csproj"
             }
           }
         }
@@ -6593,12 +6592,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[6.0.5, 6.0.5]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

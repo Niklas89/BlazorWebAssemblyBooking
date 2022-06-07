@@ -1,5 +1,6 @@
 ﻿@page "/Scheduler2"
 @inject IBookingService BookingService
+@inject NavigationManager NavigationManager
 
 
 <TelerikScheduler Data="@BookingService.Bookings"
@@ -49,8 +50,11 @@
         // perform actual data source operations here through your service
         await BookingService.Create(item);
 
+        //var result = await BookingService.Create(item);
+        //NavigationManager.NavigateTo($"booking/{result.IdBooking}");
+
         // update the local view-model data with the service data
-        await BookingService.GetBookingsClient();
+        //await BookingService.GetBookings();
     }
 
     async Task DeleteAppointment(SchedulerDeleteEventArgs args)

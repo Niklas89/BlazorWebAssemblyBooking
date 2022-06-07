@@ -10,6 +10,7 @@ namespace ApsideBookingRoomApp.Client.Services
             _http = http;
         }
         public List<BookingDto> Bookings { get; set; } = new List<BookingDto>();
+        public event Action BookingsChanged;
 
         public async Task GetBookings()
         {
@@ -23,13 +24,34 @@ namespace ApsideBookingRoomApp.Client.Services
             Bookings = await Read();
         }
 
-        public async Task<BookingDto> Create(BookingDto itemToInsert)
+        public async Task Create(BookingDto booking)
         {
-            itemToInsert.IdBooking = Guid.NewGuid();
-            var result = await _http.PostAsJsonAsync("api/booking", itemToInsert);
-            var newProduct = (await result.Content.ReadFromJsonAsync<ServiceResponse<BookingDto>>()).Data;
-            return newProduct;
+            var book = new BookingDto
+            {
+                IdBooking = Guid.NewGuid(),
+                Subject = booking.Subject,
+                StartDate = booking.StartDate,
+                EndDate = booking.EndDate,
+                Comment = booking.Comment,
+                // RowVersion = null,
+                RowVersion = System.Text.Encoding.UTF8.GetBytes("0x00000000000007ED"),
+                CreationUserId = Guid.Parse("A57C8CE4-A0F1-485D-9A67-1D3D5E64D765"),
+                ModificationUserId = Guid.Parse("A57C8CE4-A0F1-485D-9A67-1D3D5E64D765"),
+                CreationDate = DateTime.Now,
+                ModificationDate = DateTime.Now,
+                IdRoom = Guid.Parse("E665736C-35C2-419F-8A52-2F93A4C5231A"),
+            };
 
+            HttpResponseMessage response = await _http.PostAsJsonAsync("api/booking", book);
+            //var newBooking = (await response.Content.ReadFromJsonAsync<ServiceResponse<BookingDto>>()).Data;
+            //return newBooking;
+
+            var data = (await response.Content.ReadFromJsonAsync<ServiceResponse<List<BookingDto>>>()).Data;
+            
+            
+            await GetBookings();
+
+            BookingsChanged.Invoke();
             //Bookings.Insert(0, itemToInsert);
         }
 
