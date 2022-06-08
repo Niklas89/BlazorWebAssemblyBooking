@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="ApsideBookingRoomDB.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\NIKLAS.EDELSTAM\SOURCE\REPOS\APSIDEBOOKINGROOMDB\APSIDEBOOKINGROOMDB\OBJ\DEBUG\APSIDEBOOKINGROOMDB.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\LOTFI.DJAILEB\DOCUMENTS\GITHUB\BLAZORWEBASSEMBLYBOOKING\APSIDEBOOKINGROOMDB\APSIDEBOOKINGROOMDB\OBJ\DEBUG\APSIDEBOOKINGROOMDB.DLL" />
 			<Metadata Name="AssemblyName" Value="ApsideBookingRoomDB" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\niklas.edelstam\source\repos\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\ApsideBookingRoomDB.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\ApsideBookingRoomDB.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -50,22 +50,6 @@
 			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Booking]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Booking].[IdBooking]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[(newid())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
 					<References Name="[dbo].[Rooms]" />
 				</Entry>
 			</Relationship>
@@ -74,7 +58,7 @@
 					<References Name="[dbo].[Rooms].[IdRoom]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -90,7 +74,39 @@
 					<References Name="[dbo].[Users].[IdUser]" />
 				</Entry>
 			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[(newid())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Booking]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Booking].[IdBooking]" />
+				</Entry>
+			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Booking]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Booking].[IsAllDay]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[book]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -133,9 +149,9 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[book_Booking_FK]">
 			<Relationship Name="Columns">
@@ -158,7 +174,7 @@
 					<References Name="[dbo].[Booking]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="7" />
+			<AttachedAnnotation Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[book_PK]">
 			<Relationship Name="ColumnSpecifications">
@@ -186,7 +202,7 @@
 					<References Name="[dbo].[book]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="6" />
+			<AttachedAnnotation Disambiguator="7" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[book_Users0_FK]">
 			<Relationship Name="Columns">
@@ -209,7 +225,7 @@
 					<References Name="[dbo].[Users]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="8" />
+			<AttachedAnnotation Disambiguator="9" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Booking]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -228,7 +244,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -396,14 +412,30 @@
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Booking].[IsAllDay]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="6" />
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[Booking_PK]">
 			<Relationship Name="ColumnSpecifications">
@@ -422,7 +454,7 @@
 					<References Name="[dbo].[Booking]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="9" />
+			<AttachedAnnotation Disambiguator="10" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[Booking_Rooms_FK]">
 			<Relationship Name="Columns">
@@ -445,7 +477,7 @@
 					<References Name="[dbo].[Rooms]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="10" />
+			<AttachedAnnotation Disambiguator="11" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Role]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -505,7 +537,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[Role_PK]">
 			<Relationship Name="ColumnSpecifications">
@@ -524,7 +556,7 @@
 					<References Name="[dbo].[Role]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="12" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Rooms]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -543,7 +575,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="4" />
+						<AttachedAnnotation Disambiguator="3" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -699,7 +731,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[Rooms_PK]">
 			<Relationship Name="ColumnSpecifications">
@@ -718,7 +750,7 @@
 					<References Name="[dbo].[Rooms]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="13" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[userHasRole]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -761,9 +793,9 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[userHasRole_PK]">
 			<Relationship Name="ColumnSpecifications">
@@ -791,7 +823,7 @@
 					<References Name="[dbo].[userHasRole]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="13" />
+			<AttachedAnnotation Disambiguator="14" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[userHasRole_Role_FK]">
 			<Relationship Name="Columns">
@@ -814,7 +846,7 @@
 					<References Name="[dbo].[Role]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="14" />
+			<AttachedAnnotation Disambiguator="15" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[userHasRole_Users0_FK]">
 			<Relationship Name="Columns">
@@ -837,7 +869,7 @@
 					<References Name="[dbo].[Users]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="15" />
+			<AttachedAnnotation Disambiguator="16" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Users]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -856,7 +888,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="5" />
+						<AttachedAnnotation Disambiguator="4" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -932,7 +964,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[Users_PK]">
 			<Relationship Name="ColumnSpecifications">
@@ -951,7 +983,7 @@
 					<References Name="[dbo].[Users]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="16" />
+			<AttachedAnnotation Disambiguator="17" />
 		</Element>
 	</Model>
 </DataSchemaModel>

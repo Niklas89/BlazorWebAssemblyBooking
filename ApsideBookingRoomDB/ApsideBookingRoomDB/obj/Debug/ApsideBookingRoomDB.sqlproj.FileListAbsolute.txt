@@ -8,3 +8,13 @@ C:\Users\niklas.edelstam\source\repos\ApsideBookingRoomDB\ApsideBookingRoomDB\ob
 C:\Users\niklas.edelstam\source\repos\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\predeploy.sql
 C:\Users\niklas.edelstam\source\repos\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\ApsideBookingRoomDB.dll
 C:\Users\niklas.edelstam\source\repos\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\ApsideBookingRoomDB.pdb
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\bin\Debug\ApsideBookingRoomDB.dacpac
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\bin\Debug\ApsideBookingRoomDB.dll
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\bin\Debug\ApsideBookingRoomDB.pdb
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\ApsideBookingRoomDB.sqlproj.AssemblyReference.cache
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\ApsideBookingRoomDB.dll
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\ApsideBookingRoomDB.pdb
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\Model.xml
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\refactor.xml
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\postdeploy.sql
+C:\Users\Lotfi.Djaileb\Documents\GitHub\BlazorWebAssemblyBooking\ApsideBookingRoomDB\ApsideBookingRoomDB\obj\Debug\predeploy.sql

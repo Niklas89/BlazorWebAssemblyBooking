@@ -10,7 +10,7 @@
     [CreationDate]       DATETIME2 (7)    NOT NULL,
     [ModificationDate]   DATETIME2 (7)    NOT NULL,
     [IdRoom]             UNIQUEIDENTIFIER NOT NULL,
-    [IsAllDay]           BIT              NOT NULL,
+    [IsAllDay]           BIT DEFAULT 0    NULL,
     CONSTRAINT [Booking_PK] PRIMARY KEY CLUSTERED ([IdBooking] ASC),
     CONSTRAINT [Booking_Rooms_FK] FOREIGN KEY ([IdRoom]) REFERENCES [dbo].[Rooms] ([IdRoom])
 );
