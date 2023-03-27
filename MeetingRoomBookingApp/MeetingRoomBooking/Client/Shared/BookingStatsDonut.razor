@@ -1,0 +1,85 @@
+﻿@inject IBookingService BookingService
+@inject IRoomService RoomService
+@inject ITelerikStringLocalizer Localizer
+
+@* ------------------------------------------ Donut Chart ------------------------------------------ *@
+@*  more info: https://docs.telerik.com/blazor-ui/components/chart/types/donut *@
+
+<div>
+    <TelerikChart>
+    <ChartTitle Text="Nombre total de réservations par salle">
+        <ChartTitleMargin Top="50"></ChartTitleMargin>
+    </ChartTitle>
+    <ChartLegend Visible="true" Position="ChartLegendPosition.Top"></ChartLegend>
+
+        <ChartSeriesItems>
+            <ChartSeries Type="ChartSeriesType.Donut"
+                         Data="@donutData"
+                         VisibleInLegendField="@nameof(MyDonutChartModel.ShouldShowInLegend)"
+                         ColorField="@nameof(MyDonutChartModel.SegmentColor)"
+                         Field="@nameof(MyDonutChartModel.SegmentValue)"
+                         CategoryField="@nameof(MyDonutChartModel.SegmentName)">
+
+                         <ChartSeriesLabels Position="ChartSeriesLabelsPosition.OutsideEnd"
+                               Visible="true"
+                               Background="transparent"
+                               Template="#= dataItem.SegmentName # : #= percentage*100 #%  - #= dataItem.SegmentValue # réservations"
+                               Font="20px 'Helvetica'">
+                                <ChartSeriesLabelsBorder Width="1"
+                                                               Color="#0000FF"
+                                                               DashType="DashType.LongDashDotDot">
+                                </ChartSeriesLabelsBorder>
+                        </ChartSeriesLabels>
+            </ChartSeries>
+        </ChartSeriesItems>
+    </TelerikChart>
+</div>
+
+
+@code {
+    public class MyDonutChartModel
+    {
+        public string SegmentName { get; set; }
+        public double SegmentValue { get; set; }
+        public string SegmentColor { get; set; }
+        public bool ShouldShowInLegend { get; set; } = true;
+    }
+
+    public List<MyDonutChartModel> donutData = new List<MyDonutChartModel>();
+
+    public string getRandColor()
+    {
+        Random rnd = new Random();
+        string hexOutput = String.Format("{0:X}", rnd.Next(0, 0xFFFFFF));
+        while (hexOutput.Length < 6)
+            hexOutput = "0" + hexOutput;
+        return "#" + hexOutput;
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+
+        await RoomService.GetRooms();
+
+        foreach(var room in RoomService.Rooms)
+        {
+            await BookingService.GetBookings(room.Id);
+            int countBookingsByRoom = BookingService.Bookings.Count;
+            bool roomShowInLegend = true;
+            if (countBookingsByRoom == 0)
+            {
+                roomShowInLegend = false;
+            }
+            donutData.Add(
+                new MyDonutChartModel
+                {
+                    SegmentName = room.Name,
+                    SegmentValue = countBookingsByRoom,
+                    SegmentColor = getRandColor(),
+                    ShouldShowInLegend = roomShowInLegend
+                }
+            );
+        }
+
+    }
+}

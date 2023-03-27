@@ -1,0 +1,159 @@
+﻿@inject IRoomService RoomService
+@inject ITelerikStringLocalizer Localizer
+@inject NavigationManager NavigationManager
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@SelectedRoom" OnValidSubmit="@Save">
+            <DataAnnotationsValidator />
+            @* <TelerikValidationSummary />  *@
+            <div class="form-row">
+                <div class="col">
+                    <label>Name</label>
+                    <TelerikTextBox @bind-Value="@SelectedRoom.Name" Id="FullName"></TelerikTextBox>
+                    <TelerikValidationMessage For="@(() => SelectedRoom.Name)" />
+                    <TelerikValidationTooltip For="@(() => SelectedRoom.Name)" TargetSelector="#Name" />
+                </div>
+                <div class="col">
+                    <label>Capacity</label>
+                    <TelerikNumericTextBox Decimals="0" Min="1" @bind-Value="@SelectedRoom.Capacity" Id="Capacity"></TelerikNumericTextBox>
+                    <TelerikValidationMessage For="@(() => SelectedRoom.Capacity)" />
+                    <TelerikValidationTooltip For="@(() => SelectedRoom.Capacity)" TargetSelector="#Capacity" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label> Available :
+                        <TelerikCheckBox Id="Availability" @bind-Value="@SelectedRoom.Availability" />
+                    </label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label>Image</label>
+                    <div class="image-thumbnail">
+                    @if (!string.IsNullOrEmpty(SelectedRoom.NameImage))
+                    {
+                        string base64String = Convert.ToBase64String(SelectedRoom.ContentImage, 0, SelectedRoom.ContentImage.Length); 
+                        string imageRoom = "data:image/jpg;base64," + base64String;
+                        <img src="@imageRoom" width="400" />
+                    } 
+                    </div>
+                    <TelerikUpload SaveUrl="@SaveUrl"
+                       RemoveUrl="@RemoveUrl"
+                       AllowedExtensions="@AllowedFileTypes"
+                       MaxFileSize="@MaxFileSize" 
+                       OnUpload="@OnUploadHandler"
+                       OnSuccess="@OnSuccessHandler" />
+                       <div class="k-form-hint">You can only upload <strong> GIF</strong>, <strong> JPG</strong>, <strong> PNG</strong> files.</div>
+                       <div class="k-form-hint">Maximum allowed file size is <strong> 1MB</strong></div>
+                    @*<TelerikTextBox @bind-Value="@SelectedRoom.Image"></TelerikTextBox>*@
+                    @if (!string.IsNullOrEmpty(SelectedRoom.NameImage) && SelectedRoom.IdImage != null)
+                    {
+                    <div class="k-form-hint">
+                        <TelerikButton Icon="trash" ThemeColor="error" FillMode="link" Size="sm" OnClick="@DeleteImage">Supprimer l'image</TelerikButton>
+                    </div>
+                    }
+                </div>
+            </div>
+            <div class="form-row validation">
+                <TelerikButton Icon="save" ThemeColor="primary" ButtonType="@ButtonType.Submit">Sauvegarder</TelerikButton>
+                <TelerikButton Icon="cancel" OnClick="@CancelEditing" ButtonType="@ButtonType.Button">@Localizer[nameof(TelerikMessages.Cancel)]</TelerikButton>
+            </div>
+        </EditForm>
+
+@code {
+
+    [Parameter] 
+    public RoomDto SelectedRoom { get; set; }
+
+    [Parameter] 
+    public EventCallback<RoomDto> OnRoomChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<RoomDto> OnSave { get; set; } 
+
+    [Parameter] 
+    public EventCallback<RoomDto> OnDeleteImage { get; set; }
+
+    [Parameter]
+    public Guid IdRoomSelected { get; set; }
+
+    public string SaveUrl => ToAbsoluteUrl("api/image/save");
+    public string RemoveUrl => ToAbsoluteUrl("api/image/remove");
+
+    List<string> AllowedFileTypes = new List<string>() { ".jpg", ".jpeg", ".png", ".gif" };
+
+    int MaxFileSize = 1 * 1024 * 1024; // 1 MB
+
+    // variables needed if an image is uploaded and then removed on the same edit
+    // the initial values will be replaced with the uploaded ones
+    string InitialImageName;
+    string InitialImageExtension;
+    byte[] InitialImageContent;
+
+
+
+    async Task Save()
+    {
+        //await OnRoomChanged.InvokeAsync(SelectedRoom);
+        await OnSave.InvokeAsync();
+    }
+
+    async Task CancelEditing()
+    {
+        await OnRoomChanged.InvokeAsync();
+    }
+
+    async Task DeleteImage()
+    {
+        await OnDeleteImage.InvokeAsync();
+    }
+
+    // File upload
+    void OnUploadHandler(UploadEventArgs e)
+    {
+        // cancel the event if more than one file is uploaded
+        if (e.Files.Count > 1)
+        {
+            e.IsCancelled = true;
+        }
+    }
+
+    void OnSuccessHandler(UploadSuccessEventArgs e)
+    {
+        var actionText = e.Operation == UploadOperationType.Upload ? "uploaded" : "removed";
+
+        foreach (var file in e.Files)
+        {
+            Console.WriteLine($"The file {file.Name} has been {actionText} successfully");
+        }
+
+        if(actionText.Equals("uploaded"))
+        {
+            SelectedRoom.NameImage = Path.GetFileNameWithoutExtension(e.Files[0].Name);
+            SelectedRoom.ExtensionImage = Path.GetExtension(e.Files[0].Name);
+            string imageFromHeader = e.Request.ResponseText;
+            SelectedRoom.ContentImage = Convert.FromBase64String(imageFromHeader);
+        } else if(actionText.Equals("removed") && e.Request.ResponseText.Equals("removed"))
+        {
+            SelectedRoom.NameImage = InitialImageName;
+            SelectedRoom.ExtensionImage = InitialImageExtension;
+            SelectedRoom.ContentImage = InitialImageContent;
+        }
+
+    }
+
+    public string ToAbsoluteUrl(string url)
+    {
+        return $"{NavigationManager.BaseUri}{url}";
+    }
+
+    protected override void OnInitialized()
+    {
+        IdRoomSelected = SelectedRoom.Id;
+        InitialImageName = SelectedRoom.NameImage;
+        InitialImageExtension = SelectedRoom.ExtensionImage;
+        InitialImageContent = SelectedRoom.ContentImage;
+    }
+
+}

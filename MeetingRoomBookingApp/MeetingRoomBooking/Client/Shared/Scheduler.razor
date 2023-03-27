@@ -1,0 +1,235 @@
+﻿@inject IBookingService BookingService
+@inject IRoomService RoomService
+@inject ITelerikStringLocalizer Localizer
+@using System.ComponentModel.DataAnnotations
+
+<h1>@Localizer[nameof(TelerikMessages.Bookingcalendar)]</h1>
+    <div class="upperTelerik">
+        <div class="comboboxTelerik">
+            @* Room selection dropdown list - select a room and view bookings in calendar for each selected room *@
+            @if (RoomService.Rooms != null && RoomService.Rooms.Count > 0)
+            {
+                    <span>@Localizer[nameof(TelerikMessages.Selectyourroom)]</span>
+                    <br />
+                    <TelerikComboBox Width="200px" Data="@RoomService.Rooms" TextField="Name" ValueField="Id" @bind-Value="IdRoomSelected"
+                                     OnChange="@OnChangeRoomSelection">
+                        <ItemTemplate>
+                            <strong>@((context as Room).Name)</strong> (max: @((context as Room).Capacity))
+                        </ItemTemplate>
+                    </TelerikComboBox>
+            }
+        </div>
+
+        @* Add a new booking button *@
+        <div class="buttonTelerik">
+            <TelerikButton Icon="add" Size="lg" ThemeColor="primary" OnClick="@AddNewBooking">@Localizer[nameof(TelerikMessages.Book)]</TelerikButton>
+        </div>
+    </div>
+
+    @* Scheduler component *@
+    <TelerikScheduler Data="@BookingService.Bookings"
+                      TitleField="@(nameof(BookingDto.Subject))"
+                      DescriptionField="@(nameof(BookingDto.Comment))"
+                      StartField="@(nameof(BookingDto.StartDate))"
+                      EndField="@(nameof(BookingDto.EndDate))"
+                      IsAllDayField="@(nameof(BookingDto.IsAllDay))"
+                      IdField="@(nameof(BookingDto.Id))"
+                      RecurrenceRuleField="@(nameof(BookingDto.RecurrenceRule))"
+                      RecurrenceIdField="@(nameof(BookingDto.RecurrenceId))"
+                      RecurrenceExceptionsField="@(nameof(BookingDto.RecurrenceExceptions))"
+                      OnUpdate="@Update"
+                      OnCreate="@Add"
+                      OnDelete="@Delete"
+                      AllowCreate="true" AllowDelete="true" AllowUpdate="true"
+                      @bind-Date="@StartDate" Height="600px" @bind-View="@CurrView" ConfirmDelete="true">
+    
+        @* View of a whole day booking *@
+        <AllDayItemTemplate>
+            @{
+                var booking = context as BookingDto;
+                <div title="@booking.Subject" style="font-size: small">
+                    <p><strong>@booking.Subject</strong></p>
+                </div>
+            }
+        </AllDayItemTemplate>
+
+        <SchedulerViews>
+            @* Daily view of all bookings*@
+            <SchedulerDayView StartTime="@DayStart">
+                <DateHeaderTemplate>
+                    <div>
+                        @context.ToLongDateString()
+                    </div>
+                </DateHeaderTemplate>
+                <ItemTemplate>
+                    @* For a daily view, show subject with start time, end time and comment *@
+                    @{
+                           var booking = context as BookingDto;
+                            <div title="@booking.Subject" style="font-size: small">
+                                <p><strong>@booking.Subject</strong> :  
+                                @booking.StartDate.ToShortTimeString() - @booking.EndDate.ToShortTimeString()</p>
+                                <p>@booking.Comment</p>
+                            </div>
+                    }
+                </ItemTemplate>
+            </SchedulerDayView>
+
+            @* Weekly view of all bookings *@
+            <SchedulerWeekView StartTime="@DayStart">
+                <DateHeaderTemplate>
+                    <div>
+                        @context.ToLongDateString()
+                    </div>
+                </DateHeaderTemplate>
+                <ItemTemplate>
+                    @* For a weekly view, show subject with start and end time *@
+                    @{
+                        var booking = context as BookingDto;
+                       <div title="@booking.Subject" style="font-size: small">
+                            <p><strong>@booking.Subject</strong> :  
+                            @booking.StartDate.ToShortTimeString() - @booking.EndDate.ToShortTimeString()</p>
+                       </div>
+                        
+                    }
+                </ItemTemplate>
+            </SchedulerWeekView>
+
+            @* Monthly view of all bookings *@
+            <SchedulerMonthView>
+                <ItemTemplate>
+                    @* If booking is planned for All Day view only subject, else view start time and end time *@
+                    @{
+                        var booking = context as BookingDto;
+                        if (booking.IsAllDay)
+                        {
+                            <span>@booking.Subject</span>
+                        }
+                        else
+                        {
+                            <div title="@booking.Subject" style="font-size: small">
+                                @booking.StartDate.ToShortTimeString() - @booking.EndDate.ToShortTimeString()
+                            </div>
+                        }
+                    }
+                </ItemTemplate>
+            </SchedulerMonthView>
+        </SchedulerViews>
+    </TelerikScheduler>
+
+    @* Open modal window when clicking on BOOK button on the top right corner of the scheduler*@
+    <TelerikWindow Modal="true" 
+        Resizable="true"
+        MinHeight="600px"
+        Height="600px"
+        MinWidth="400px"
+        Width="550px"
+        Visible="@CustomEditFormShown" CloseOnOverlayClick="true">
+        <WindowTitle>@Localizer[nameof(TelerikMessages.Bookingdetails)]</WindowTitle>
+        <WindowActions>
+            <WindowAction Name="Close" OnClick="@CancelEditing" />
+        </WindowActions>
+        <WindowContent>
+            <BookingEditor Booking="@CurrentBooking" OnBookingChanged="@RefreshData" />
+        </WindowContent>
+    </TelerikWindow>
+    
+
+
+@code {
+    // scheduler settings
+    public SchedulerView CurrView { get; set; } = SchedulerView.Week;
+    public DateTime StartDate { get; set; } = DateTime.Now;
+    public DateTime DayStart { get; set; } = new DateTime(2000, 1, 1, 8, 0, 0); //the time portion is important
+    public Guid IdRoomSelected { get; set; }
+
+    // custom edit form
+    bool CustomEditFormShown { get; set; }
+    BookingDto CurrentBooking { get; set; } 
+
+    // When selecting a room in the dropdown list we get all bookings corresponding to that room
+    async Task OnChangeRoomSelection(object roomInput)
+    {
+        if((Guid)roomInput != Guid.Empty) 
+            await BookingService.GetBookings((Guid)roomInput);
+    }
+
+    // When clicked on "Book" button
+    void AddNewBooking(MouseEventArgs evArgs)
+    {
+        SchedulerEditEventArgs args = new SchedulerEditEventArgs();
+        args.IsCancelled = true;//prevent built-in edit form to show up
+        BookingDto item = (BookingDto)args.Item;
+        CustomEditFormShown = true;
+        CurrentBooking = new BookingDto() { StartDate = DateTime.Now, EndDate = DateTime.Now.AddHours(1), IsAllDay = false, IdRoom =  IdRoomSelected};
+
+    }
+
+    // Update existing booking
+    async Task Update(SchedulerUpdateEventArgs args)
+    {
+        BookingDto item = (BookingDto)args.Item;
+        await BookingService.UpdateBooking(item);
+        await RefreshData();
+
+    }
+
+    // Add a new booking if double clicked directly in the scheduler
+    async Task Add(SchedulerCreateEventArgs args)
+    {
+        BookingDto item = (BookingDto)args.Item;
+        string roomName = RoomService.Rooms.Where(i => i.Id.Equals(IdRoomSelected)).Select(r => r.Name).FirstOrDefault();
+        int capacityRoom = RoomService.Rooms.Where(i => i.Id.Equals(IdRoomSelected)).Select(r => r.Capacity).FirstOrDefault();
+        await BookingService.CreateBooking(item, IdRoomSelected, roomName, capacityRoom);
+        await RefreshData();
+    } 
+
+    // When deleting a booking directly in the scheduler
+    async Task Delete(SchedulerDeleteEventArgs args)
+    {
+        BookingDto item = (BookingDto)args.Item;
+        await BookingService.DeleteBooking(item);
+
+    }
+
+    // Refresh the calendar after action on booking
+    async Task RefreshData()
+    {
+        CustomEditFormShown = false;
+        CurrentBooking = null;
+
+        // Load all rooms in the rooms list
+        await RoomService.GetRooms();
+
+        // If the room is already selected, get the bookings from the corresponding room
+        if (IdRoomSelected != Guid.Empty)
+            await BookingService.GetBookings(IdRoomSelected);
+        else
+        {
+            BookingService.Bookings = null;
+            BookingService.Message = "no room found in the database.";
+        }
+    }
+
+    async Task CancelEditing()
+    {
+        await RefreshData();
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        // On page load, get the list of all rooms and the first room id in the database which is stored
+        // as a default value in the selected room variable for the dropdown list (IdRoomSelected)
+        await RoomService.GetRooms();
+        IdRoomSelected = RoomService.GetFirstRoomId();
+
+        // If the room is already selected, get the bookings from the corresponding room
+        if (IdRoomSelected != Guid.Empty)
+            await BookingService.GetBookings(IdRoomSelected);
+        else
+        {
+            BookingService.Bookings = null;
+            BookingService.Message = "no room found in the database.";
+        }
+        
+    }
+}

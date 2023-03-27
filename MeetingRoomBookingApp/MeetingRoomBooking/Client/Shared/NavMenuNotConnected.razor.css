@@ -1,0 +1,23 @@
+﻿.logo {
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+.menunav {
+    width: 90%;
+}
+
+
+.flex-nav {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.language {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}

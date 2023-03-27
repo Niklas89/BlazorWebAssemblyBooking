@@ -1,0 +1,74 @@
+﻿
+
+#footer {
+    margin-top: 50px;
+}
+
+    #footer ul {
+        margin-bottom: 0;
+        
+    }
+
+        #footer ul > li {
+            display: inline-block;
+        }
+
+    #footer .aboveCopyright {
+        display: -webkit-flex;
+        display: flex;
+        padding-top: 20px;
+        font-size: 0.9em;
+        height: 100px;
+        width: 100%;
+        background-color: #3E709C;
+        color: #ffffff;
+        justify-content: center;
+        position: relative;
+    }
+
+
+        #footer .aboveCopyright .logoimg {
+            position: absolute;
+            top: 15px;
+            left: 0;
+        }
+
+        #footer .aboveCopyright .texte {
+            padding-top: 15px;
+        }
+
+
+    #footer .copyright {
+        font-size: 0.8em;
+        list-style: none;
+        text-align: center;
+        padding-top: 25px;
+        height: 70px;
+        background-color: #183650;
+        color: #ffffff7a;
+    }
+
+/* changed from initial 641px width to 1335px, because Telerik Scheduler switches to mobile view at 1000px
+    and Connection link in nav menu is hidden below 1335px */
+@media screen and (max-width: 1300px) {
+
+    #footer .aboveCopyright {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+        #footer .aboveCopyright .texte {
+            position: absolute;
+            top: 15px;
+            right: 0;
+            width: 300px;
+        }
+
+    #footer .copyright li {
+        display: block;
+        border-left: 0;
+        margin-left: 0;
+        padding-left: 0;
+        line-height: inherit;
+    }
+}

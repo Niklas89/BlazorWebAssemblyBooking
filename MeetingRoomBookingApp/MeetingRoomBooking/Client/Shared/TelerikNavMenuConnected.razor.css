@@ -1,0 +1,114 @@
+﻿.logo {
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+.nav-item ::deep a {
+    color: #464646;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+    font-size: 14px;
+    line-height: 2;
+}
+
+    .nav-item ::deep a.active {
+        background-color: rgba(255,255,255,0.25);
+        color: #e79759;
+    }
+
+    .nav-item ::deep a:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: #e79759;
+    }
+
+
+#demo-runner {
+    padding: 0px;
+}
+
+.drawer-sm.k-drawer-expanded .k-drawer.telerik-blazor {
+    width: 100%;
+}
+
+.drawer-sm.k-drawer-expanded .k-drawer-wrapper,
+.drawer-sm.k-drawer-expanded .k-drawer-items {
+    width: 100% !important;
+}
+
+.drawer-sm.k-drawer-expanded .k-drawer {
+    max-width: 100vh;
+}
+
+.drawer-sm.k-drawer-expanded .k-overlay {
+    display: none;
+}
+
+.separator {
+    box-sizing: border-box;
+    width: 1px;
+    height: 30px;
+    background: #E5E5E5;
+    border-radius: 0px;
+}
+
+.demo-menu-container {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 8px;
+    gap: 8px;
+    height: 90px;
+    left: 0px;
+    top: 0px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.03), 0px 4px 5px rgba(0, 0, 0, 0.04);
+    position: relative;
+}
+
+    .demo-menu-container .connect {
+        position: absolute;
+        top: 25px;
+        right: 80px;
+        font-weight: normal;
+    }
+
+    .demo-menu-container .language {
+        position: absolute;
+        top: 30px;
+        right: 10px;
+    }
+
+    .demo-menu-container figure {
+        width: 19px;
+        height: 19px;
+        margin: 0 5px 0 0;
+    }
+
+    .demo-menu-container .k-menu {
+        height: 100%;
+    }
+
+.k-drawer-item {
+    font-weight: bold;
+}
+
+.k-drawer-item.k-level-1 {
+    padding-inline-start: 60px;
+}
+
+.k-drawer-item a {
+    color: #e79759;
+}
+
+.k-state-selected a {
+    color: #000000;
+}
+
+.k-overlay {
+    position: absolute;
+}

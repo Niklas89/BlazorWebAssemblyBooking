@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddorModifyUser" xml:space="preserve">
+    <value>Ajouter ou modifier un utilisateur</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>Ajouter un utilisateur</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Administrateur</value>
+  </data>
+  <data name="Aggregate_Average" xml:space="preserve">
+    <value>Moyenne</value>
+  </data>
+  <data name="Aggregate_Count" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="Aggregate_Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Aggregate_Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="Aggregate_Sum" xml:space="preserve">
+    <value>Somme</value>
+  </data>
+  <data name="AllDay" xml:space="preserve">
+    <value>Jour entier</value>
+  </data>
+  <data name="AutoComplete_Clear" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="AutoComplete_Clear1" xml:space="preserve">
+    <value>Fini</value>
+  </data>
+  <data name="AutoComplete_NoData" xml:space="preserve">
+    <value>Aucune donnée disponible</value>
+  </data>
+  <data name="AutoComplete_NoData1" xml:space="preserve">
+    <value>Pas de données</value>
+  </data>
+  <data name="Book" xml:space="preserve">
+    <value>Réserver</value>
+  </data>
+  <data name="Bookingcalendar" xml:space="preserve">
+    <value>Calendrier des réservations</value>
+  </data>
+  <data name="Bookingdetails" xml:space="preserve">
+    <value>Réservation</value>
+  </data>
+  <data name="Bookroomfooter" xml:space="preserve">
+    <value>Réservez une salle pour votre équipe facilement et sans attendre</value>
+  </data>
+  <data name="Calendar_Choose_Decade" xml:space="preserve">
+    <value>Choisir une décénie</value>
+  </data>
+  <data name="Calendar_Choose_Month" xml:space="preserve">
+    <value>Choisir un mois</value>
+  </data>
+  <data name="Calendar_Choose_Year" xml:space="preserve">
+    <value>Choisir une année</value>
+  </data>
+  <data name="Calendar_GoToNext" xml:space="preserve">
+    <value>Aller à la prochaine période</value>
+  </data>
+  <data name="Calendar_GoToPrevious" xml:space="preserve">
+    <value>Aller à la précédente période</value>
+  </data>
+  <data name="Calendar_Today" xml:space="preserve">
+    <value>Aujourd'hui</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Carousel_Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Carousel_Previous" xml:space="preserve">
+    <value>Precédent</value>
+  </data>
+  <data name="ColumnMenu_Apply" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="ColumnMenu_ColumnMenu" xml:space="preserve">
+    <value>Menu de la colonne</value>
+  </data>
+  <data name="ColumnMenu_Columns" xml:space="preserve">
+    <value>Colonnes</value>
+  </data>
+  <data name="ColumnMenu_Lock" xml:space="preserve">
+    <value>Verrou</value>
+  </data>
+  <data name="ColumnMenu_Reset" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="ColumnMenu_SortAscending" xml:space="preserve">
+    <value>Tri Croissant</value>
+  </data>
+  <data name="ColumnMenu_SortDescending" xml:space="preserve">
+    <value>Tri décroissant</value>
+  </data>
+  <data name="ColumnMenu_Unlock" xml:space="preserve">
+    <value>Déverrouiller</value>
+  </data>
+  <data name="ComboBox_Clear" xml:space="preserve">
+    <value>Fini</value>
+  </data>
+  <data name="ComboBox_NoData" xml:space="preserve">
+    <value>Pas de données</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Commentaire</value>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Créer</value>
+  </data>
+  <data name="DateInput_ParsingErrorMessage" xml:space="preserve">
+    <value>Le format de la date n’est pas lisible. Veuillez entrer une date valide.</value>
+  </data>
+  <data name="DateInput_ValidationErrorMessage" xml:space="preserve">
+    <value>La date n’est pas valide.</value>
+  </data>
+  <data name="DateRangePicker_End" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="DateRangePicker_Start" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="DateTimePicker_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="DateTimePicker_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DateTimePicker_Set" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="DateTimePicker_Time" xml:space="preserve">
+    <value>Temps</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Dialog_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Dialog_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DropDownList_NoData" xml:space="preserve">
+    <value>Pas de données</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="Editor_AddColumnAfter" xml:space="preserve">
+    <value>Ajouter une colonne à droite</value>
+  </data>
+  <data name="Editor_AddColumnBefore" xml:space="preserve">
+    <value>Ajouter une colonne à gauche</value>
+  </data>
+  <data name="Editor_AddColumnLeft" xml:space="preserve">
+    <value>Ajouter une colonne à gauche</value>
+  </data>
+  <data name="Editor_AddColumnRight" xml:space="preserve">
+    <value>Ajouter une colonne à droite</value>
+  </data>
+  <data name="Editor_AddRowAbove" xml:space="preserve">
+    <value>Ajouter une rangée au-dessus</value>
+  </data>
+  <data name="Editor_AddRowAfter" xml:space="preserve">
+    <value>Ajouter une ligne ci-dessous</value>
+  </data>
+  <data name="Editor_AddRowBefore" xml:space="preserve">
+    <value>Ajouter une rangée au-dessus</value>
+  </data>
+  <data name="Editor_AddRowBelow" xml:space="preserve">
+    <value>Ajouter une ligne ci-dessous</value>
+  </data>
+  <data name="Editor_AlignCenter" xml:space="preserve">
+    <value>Centrer le texte</value>
+  </data>
+  <data name="Editor_AlignJustify" xml:space="preserve">
+    <value>Justifier</value>
+  </data>
+  <data name="Editor_AlignLeft" xml:space="preserve">
+    <value>Aligner le texte à gauche</value>
+  </data>
+  <data name="Editor_AlignRight" xml:space="preserve">
+    <value>Aligner le texte à droite</value>
+  </data>
+  <data name="Editor_BackColor" xml:space="preserve">
+    <value>Couleur d'arrière-plan</value>
+  </data>
+  <data name="Editor_Bold" xml:space="preserve">
+    <value>Gras</value>
+  </data>
+  <data name="Editor_CreateLink" xml:space="preserve">
+    <value>Insérer l’hyperlien</value>
+  </data>
+  <data name="Editor_CreateTable" xml:space="preserve">
+    <value>Créer une table</value>
+  </data>
+  <data name="Editor_CreateTablePopup" xml:space="preserve">
+    <value>Créer {0} table</value>
+  </data>
+  <data name="Editor_DeleteColumn" xml:space="preserve">
+    <value>Supprimer la colonne</value>
+  </data>
+  <data name="Editor_DeleteRow" xml:space="preserve">
+    <value>Supprimer une ligne</value>
+  </data>
+  <data name="Editor_DialogCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Editor_DialogClose" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Editor_DialogInsert" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="Editor_DialogUpdate" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Editor_FontFamily" xml:space="preserve">
+    <value>Nom de la police</value>
+  </data>
+  <data name="Editor_FontSize" xml:space="preserve">
+    <value>Taille de la police</value>
+  </data>
+  <data name="Editor_ForeColor" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
+  <data name="Editor_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="Editor_ImageAltText" xml:space="preserve">
+    <value>Texte alternatif:</value>
+  </data>
+  <data name="Editor_ImageHeight" xml:space="preserve">
+    <value>Hauteur:</value>
+  </data>
+  <data name="Editor_ImageWebAddress" xml:space="preserve">
+    <value>Adresse Web:</value>
+  </data>
+  <data name="Editor_ImageWidth" xml:space="preserve">
+    <value>Épaisseur:</value>
+  </data>
+  <data name="Editor_Indent" xml:space="preserve">
+    <value>Alinéa</value>
+  </data>
+  <data name="Editor_InsertFile" xml:space="preserve">
+    <value>Insérer un fichier</value>
+  </data>
+  <data name="Editor_InsertHtml" xml:space="preserve">
+    <value>Insérer HTML</value>
+  </data>
+  <data name="Editor_InsertImage" xml:space="preserve">
+    <value>Insérer une image</value>
+  </data>
+  <data name="Editor_InsertOrderedList" xml:space="preserve">
+    <value>Insérer la liste ordonnée</value>
+  </data>
+  <data name="Editor_InsertUnorderedList" xml:space="preserve">
+    <value>Insérer la liste non ordonnée</value>
+  </data>
+  <data name="Editor_Italic" xml:space="preserve">
+    <value>Italique</value>
+  </data>
+  <data name="Editor_LinkOpenNewWindow" xml:space="preserve">
+    <value>Ouvrir dans une nouvelle fenêtre</value>
+  </data>
+  <data name="Editor_LinkText" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="Editor_LinkTitle" xml:space="preserve">
+    <value>Titre:</value>
+  </data>
+  <data name="Editor_LinkWebAddress" xml:space="preserve">
+    <value>Adresse Web:</value>
+  </data>
+  <data name="Editor_MergeCells" xml:space="preserve">
+    <value>Fusionner des cellules</value>
+  </data>
+  <data name="Editor_Outdent" xml:space="preserve">
+    <value>Alinéa avancé</value>
+  </data>
+  <data name="Editor_Redo" xml:space="preserve">
+    <value>Refaire</value>
+  </data>
+  <data name="Editor_SetHtml" xml:space="preserve">
+    <value>Afficher le code HTML</value>
+  </data>
+  <data name="Editor_SplitCell" xml:space="preserve">
+    <value>Cellules fractionnées</value>
+  </data>
+  <data name="Editor_Strikethrough" xml:space="preserve">
+    <value>Caractères barrés</value>
+  </data>
+  <data name="Editor_Subscript" xml:space="preserve">
+    <value>Indice</value>
+  </data>
+  <data name="Editor_Superscript" xml:space="preserve">
+    <value>Exposant</value>
+  </data>
+  <data name="Editor_Underline" xml:space="preserve">
+    <value>Souligner</value>
+  </data>
+  <data name="Editor_Undo" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Editor_Unlink" xml:space="preserve">
+    <value>Supprimer l’hyperlien</value>
+  </data>
+  <data name="Editor_ViewHtml" xml:space="preserve">
+    <value>Afficher le code HTML</value>
+  </data>
+  <data name="End_Date" xml:space="preserve">
+    <value>Date de fin</value>
+  </data>
+  <data name="Error_Required_Email" xml:space="preserve">
+    <value>L'adresse e-mail est obligatoire</value>
+  </data>
+  <data name="Error_Required_EndDate" xml:space="preserve">
+    <value>La date de fin est obligatoire</value>
+  </data>
+  <data name="Error_Required_FullName" xml:space="preserve">
+    <value>Le nom complet est obligatoire</value>
+  </data>
+  <data name="Error_Required_Role" xml:space="preserve">
+    <value>Le rôle est obligatoire</value>
+  </data>
+  <data name="Error_Required_StartDate" xml:space="preserve">
+    <value>La date de début est obligatoire</value>
+  </data>
+  <data name="Error_Required_Subject" xml:space="preserve">
+    <value>Le sujet est obligatoire</value>
+  </data>
+  <data name="FileManager_ConfirmDeleteCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="FileManager_ConfirmDeleteOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="FileManager_ConfirmDeleteText" xml:space="preserve">
+    <value>Êtes-vous certain de vouloir supprimer le(s) fichier(s)?</value>
+  </data>
+  <data name="FileManager_ConfirmDeleteTitle" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="FileManager_ContextMenu_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="FileManager_ContextMenu_Download" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="FileManager_ContextMenu_Rename" xml:space="preserve">
+    <value>Renommer</value>
+  </data>
+  <data name="FileManager_DetailsPane_DateCreated" xml:space="preserve">
+    <value>Date de création</value>
+  </data>
+  <data name="FileManager_DetailsPane_DateModified" xml:space="preserve">
+    <value>Date de modification</value>
+  </data>
+  <data name="FileManager_DetailsPane_NoFileSelected" xml:space="preserve">
+    <value>Aucun fichier sélectionné</value>
+  </data>
+  <data name="FileManager_DetailsPane_Size" xml:space="preserve">
+    <value>Taille</value>
+  </data>
+  <data name="FileManager_DetailsPane_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FileManager_FileView_Items" xml:space="preserve">
+    <value>Eléments</value>
+  </data>
+  <data name="FileManager_Grid_DateCreatedColumnTitle" xml:space="preserve">
+    <value>Date de Création</value>
+  </data>
+  <data name="FileManager_Grid_FileSizeColumnTitle" xml:space="preserve">
+    <value>Taille du Fichier</value>
+  </data>
+  <data name="FileManager_Grid_NameColumnTitle" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="FileManager_SearchBox_Placeholder" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="FileManager_SearchBox_Title" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="FileManager_ToolBar_CreateNewFolder" xml:space="preserve">
+    <value>Nouveau dossier</value>
+  </data>
+  <data name="FileManager_ToolBar_SortBy" xml:space="preserve">
+    <value>Trier par</value>
+  </data>
+  <data name="FileManager_ToolBar_SortByDateCreated" xml:space="preserve">
+    <value>Date de Création</value>
+  </data>
+  <data name="FileManager_ToolBar_SortByDateModified" xml:space="preserve">
+    <value>Date de modification</value>
+  </data>
+  <data name="FileManager_ToolBar_SortByName" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="FileManager_ToolBar_SortBySize" xml:space="preserve">
+    <value>Taille</value>
+  </data>
+  <data name="FileManager_ToolBar_SortByType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FileManager_ToolBar_Upload" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="FileManager_ToolBar_ViewDetails" xml:space="preserve">
+    <value>Afficher les Détails</value>
+  </data>
+  <data name="FileManager_UploadDialogCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="FileManager_UploadDialogOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="FileManager_UploadDialogTitle" xml:space="preserve">
+    <value>Télécharger des fichiers</value>
+  </data>
+  <data name="FileSelect_InvalidFileExtension" xml:space="preserve">
+    <value>Le type de fichier n’est pas autorisé.</value>
+  </data>
+  <data name="FileSelect_InvalidMaxFileSize" xml:space="preserve">
+    <value>Taille du fichier trop grand.</value>
+  </data>
+  <data name="FileSelect_InvalidMinFileSize" xml:space="preserve">
+    <value>Taille du fichier trop petit.</value>
+  </data>
+  <data name="FileSelect_Remove" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="FileSelect_SelectFiles" xml:space="preserve">
+    <value>Sélectionner les fichiers...</value>
+  </data>
+  <data name="Filter_AddExpression" xml:space="preserve">
+    <value>Ajouter une expression</value>
+  </data>
+  <data name="Filter_AddGroup" xml:space="preserve">
+    <value>Ajouter un groupe</value>
+  </data>
+  <data name="Filter_AdditionalOperator" xml:space="preserve">
+    <value>Opérateur supplémentaire</value>
+  </data>
+  <data name="Filter_AdditionalValue" xml:space="preserve">
+    <value>Valeur supplémentaire</value>
+  </data>
+  <data name="Filter_All" xml:space="preserve">
+    <value>(Tout)</value>
+  </data>
+  <data name="Filter_And" xml:space="preserve">
+    <value>Et</value>
+  </data>
+  <data name="Filter_And1" xml:space="preserve">
+    <value>Et</value>
+  </data>
+  <data name="Filter_BooleanIsEqualTo" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_BooleanIsNotEqualTo" xml:space="preserve">
+    <value>N'est pas égal à</value>
+  </data>
+  <data name="Filter_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Filter_Cancel1" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Filter_Clear" xml:space="preserve">
+    <value>Effacer filtre</value>
+  </data>
+  <data name="Filter_Clear1" xml:space="preserve">
+    <value>Vide</value>
+  </data>
+  <data name="Filter_DateIsEqualTo" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_DateIsEqualTo1" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_DateIsGreaterThan" xml:space="preserve">
+    <value>Est postérieur</value>
+  </data>
+  <data name="Filter_DateIsGreaterThan1" xml:space="preserve">
+    <value>Est supérieure</value>
+  </data>
+  <data name="Filter_DateIsGreaterThanOrEqualTo" xml:space="preserve">
+    <value>Est postérieur ou égal à</value>
+  </data>
+  <data name="Filter_DateIsGreaterThanOrEqualTo1" xml:space="preserve">
+    <value>Est supérieure ou égale à</value>
+  </data>
+  <data name="Filter_DateIsLessThan" xml:space="preserve">
+    <value>Est antérieur</value>
+  </data>
+  <data name="Filter_DateIsLessThan1" xml:space="preserve">
+    <value>Est inférieur</value>
+  </data>
+  <data name="Filter_DateIsLessThanOrEqualTo" xml:space="preserve">
+    <value>Est antérieur ou égal à</value>
+  </data>
+  <data name="Filter_DateIsLessThanOrEqualTo1" xml:space="preserve">
+    <value>Est inférieur ou égale à</value>
+  </data>
+  <data name="Filter_DateIsNotEqualTo" xml:space="preserve">
+    <value>N’est pas égal à</value>
+  </data>
+  <data name="Filter_DateIsNotEqualTo1" xml:space="preserve">
+    <value>N'est pas égal à</value>
+  </data>
+  <data name="Filter_DateIsNotNull" xml:space="preserve">
+    <value>Is not null</value>
+  </data>
+  <data name="Filter_DateIsNotNull1" xml:space="preserve">
+    <value>N'est pas nul</value>
+  </data>
+  <data name="Filter_DateIsNull" xml:space="preserve">
+    <value>Is null</value>
+  </data>
+  <data name="Filter_DateIsNull1" xml:space="preserve">
+    <value>Est nul</value>
+  </data>
+  <data name="Filter_EnumIsEqualTo" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_EnumIsEqualTo1" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_EnumIsNotEqualTo" xml:space="preserve">
+    <value>N’est pas égal à</value>
+  </data>
+  <data name="Filter_EnumIsNotEqualTo1" xml:space="preserve">
+    <value>N'est pas égal à</value>
+  </data>
+  <data name="Filter_EnumIsNotNull" xml:space="preserve">
+    <value>Is not null</value>
+  </data>
+  <data name="Filter_EnumIsNotNull1" xml:space="preserve">
+    <value>N'est pas nul</value>
+  </data>
+  <data name="Filter_EnumIsNull" xml:space="preserve">
+    <value>Is null</value>
+  </data>
+  <data name="Filter_EnumIsNull1" xml:space="preserve">
+    <value>Est nul</value>
+  </data>
+  <data name="Filter_Filter" xml:space="preserve">
+    <value>Filtrer</value>
+  </data>
+  <data name="Filter_Filter1" xml:space="preserve">
+    <value>Filtre</value>
+  </data>
+  <data name="Filter_FilterLabel" xml:space="preserve">
+    <value>Filtre</value>
+  </data>
+  <data name="Filter_FilterSettings" xml:space="preserve">
+    <value>Paramètres du filtre</value>
+  </data>
+  <data name="Filter_Info" xml:space="preserve">
+    <value>Afficher les lignes avec la valeur qui</value>
+  </data>
+  <data name="Filter_IsFalse" xml:space="preserve">
+    <value>est fausse</value>
+  </data>
+  <data name="Filter_IsFalse1" xml:space="preserve">
+    <value>est faux</value>
+  </data>
+  <data name="Filter_IsTrue" xml:space="preserve">
+    <value>est vrai</value>
+  </data>
+  <data name="Filter_IsTrue1" xml:space="preserve">
+    <value>est vrai</value>
+  </data>
+  <data name="Filter_Logic" xml:space="preserve">
+    <value>Logique des filtres</value>
+  </data>
+  <data name="Filter_NoData" xml:space="preserve">
+    <value>Pas de données</value>
+  </data>
+  <data name="Filter_NumberIsEqualTo" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_NumberIsEqualTo1" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_NumberIsGreaterThan" xml:space="preserve">
+    <value>Est supérieur à</value>
+  </data>
+  <data name="Filter_NumberIsGreaterThan1" xml:space="preserve">
+    <value>est supérieure à</value>
+  </data>
+  <data name="Filter_NumberIsGreaterThanOrEqualTo" xml:space="preserve">
+    <value>Est supérieur ou égal à</value>
+  </data>
+  <data name="Filter_NumberIsGreaterThanOrEqualTo1" xml:space="preserve">
+    <value>Est supérieur ou égal à</value>
+  </data>
+  <data name="Filter_NumberIsLessThan" xml:space="preserve">
+    <value>Est inférieur à</value>
+  </data>
+  <data name="Filter_NumberIsLessThan1" xml:space="preserve">
+    <value>est inférieur à</value>
+  </data>
+  <data name="Filter_NumberIsLessThanOrEqualTo" xml:space="preserve">
+    <value>Est inférieur ou égal à</value>
+  </data>
+  <data name="Filter_NumberIsLessThanOrEqualTo1" xml:space="preserve">
+    <value>est inférieur ou égal à</value>
+  </data>
+  <data name="Filter_NumberIsNotEqualTo" xml:space="preserve">
+    <value>N’est pas égal à</value>
+  </data>
+  <data name="Filter_NumberIsNotEqualTo1" xml:space="preserve">
+    <value>N'est pas égal à</value>
+  </data>
+  <data name="Filter_NumberIsNotNull" xml:space="preserve">
+    <value>N'est pas nul</value>
+  </data>
+  <data name="Filter_NumberIsNull" xml:space="preserve">
+    <value>Est nul</value>
+  </data>
+  <data name="Filter_Operator" xml:space="preserve">
+    <value>Opérateur</value>
+  </data>
+  <data name="Filter_Or" xml:space="preserve">
+    <value>Ou</value>
+  </data>
+  <data name="Filter_Or1" xml:space="preserve">
+    <value>Ou</value>
+  </data>
+  <data name="Filter_Remove" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Filter_Search" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="Filter_SelectAll" xml:space="preserve">
+    <value>Sélectionner tout</value>
+  </data>
+  <data name="Filter_SelectValue" xml:space="preserve">
+    <value>-Sélectionner-</value>
+  </data>
+  <data name="Filter_SelectValue1" xml:space="preserve">
+    <value>-Sélectionnez la valeur-</value>
+  </data>
+  <data name="Filter_StringContains" xml:space="preserve">
+    <value>Contient</value>
+  </data>
+  <data name="Filter_StringContains1" xml:space="preserve">
+    <value>Contient</value>
+  </data>
+  <data name="Filter_StringDoesNotContain" xml:space="preserve">
+    <value>Ne contient pas</value>
+  </data>
+  <data name="Filter_StringDoesNotContain1" xml:space="preserve">
+    <value>Ne contient pas</value>
+  </data>
+  <data name="Filter_StringEndsWith" xml:space="preserve">
+    <value>Se termine par</value>
+  </data>
+  <data name="Filter_StringEndsWith1" xml:space="preserve">
+    <value>Finit par</value>
+  </data>
+  <data name="Filter_StringIsEmpty" xml:space="preserve">
+    <value>Is empty</value>
+  </data>
+  <data name="Filter_StringIsEmpty1" xml:space="preserve">
+    <value>Est vide</value>
+  </data>
+  <data name="Filter_StringIsEqualTo" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_StringIsEqualTo1" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="Filter_StringIsNotEmpty" xml:space="preserve">
+    <value>Is not empty</value>
+  </data>
+  <data name="Filter_StringIsNotEmpty1" xml:space="preserve">
+    <value>N'est pas vide</value>
+  </data>
+  <data name="Filter_StringIsNotEqualTo" xml:space="preserve">
+    <value>N’est pas égal à</value>
+  </data>
+  <data name="Filter_StringIsNotEqualTo1" xml:space="preserve">
+    <value>N'est pas égal à</value>
+  </data>
+  <data name="Filter_StringIsNotNull" xml:space="preserve">
+    <value>Is not null</value>
+  </data>
+  <data name="Filter_StringIsNotNull1" xml:space="preserve">
+    <value>N'est pas nul</value>
+  </data>
+  <data name="Filter_StringIsNotNullOrEmpty" xml:space="preserve">
+    <value>A de la valeur</value>
+  </data>
+  <data name="Filter_StringIsNull" xml:space="preserve">
+    <value>Is null</value>
+  </data>
+  <data name="Filter_StringIsNull1" xml:space="preserve">
+    <value>Est nul</value>
+  </data>
+  <data name="Filter_StringIsNullOrEmpty" xml:space="preserve">
+    <value>N'a aucune valeur</value>
+  </data>
+  <data name="Filter_StringStartsWith" xml:space="preserve">
+    <value>Commence par</value>
+  </data>
+  <data name="Filter_StringStartsWith1" xml:space="preserve">
+    <value>Commence par</value>
+  </data>
+  <data name="Filter_Value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="Form_Clear" xml:space="preserve">
+    <value>Fini</value>
+  </data>
+  <data name="Form_Submit" xml:space="preserve">
+    <value>Soumettre</value>
+  </data>
+  <data name="Gantt_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Gantt_Day" xml:space="preserve">
+    <value>Jour</value>
+  </data>
+  <data name="Gantt_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Gantt_DialogClose" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Gantt_Editor_EditorTitle" xml:space="preserve">
+    <value>Tâche</value>
+  </data>
+  <data name="Gantt_Editor_End" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="Gantt_Editor_EndTimeValueValidationMessage" xml:space="preserve">
+    <value>L'heure de fin doit être supérieure à l'heure de début.</value>
+  </data>
+  <data name="Gantt_Editor_PercentComplete" xml:space="preserve">
+    <value>Compléter</value>
+  </data>
+  <data name="Gantt_Editor_Start" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="Gantt_Editor_StartTimeValueValidationMessage" xml:space="preserve">
+    <value>L'heure de début doit être antérieure à l'heure de fin.</value>
+  </data>
+  <data name="Gantt_Editor_Title" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="Gantt_Editor_TitleRequiredValidationMessage" xml:space="preserve">
+    <value>Le titre est obligatoire.</value>
+  </data>
+  <data name="Gantt_Month" xml:space="preserve">
+    <value>Mois</value>
+  </data>
+  <data name="Gantt_Save" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="Gantt_Week" xml:space="preserve">
+    <value>Semaine</value>
+  </data>
+  <data name="Gantt_Year" xml:space="preserve">
+    <value>Année</value>
+  </data>
+  <data name="Grid_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Grid_Cancel1" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Grid_CancelChanges" xml:space="preserve">
+    <value>Annuler les modifications</value>
+  </data>
+  <data name="Grid_CancelDelete" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Grid_CancelDelete1" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Grid_CheckAll" xml:space="preserve">
+    <value>Choisir toutes</value>
+  </data>
+  <data name="Grid_Columns" xml:space="preserve">
+    <value>Colonnes</value>
+  </data>
+  <data name="Grid_ColumnSettings" xml:space="preserve">
+    <value>Paramètres de colonne</value>
+  </data>
+  <data name="Grid_Confirmation" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer cet enregistrement?</value>
+  </data>
+  <data name="Grid_ConfirmDelete" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="Grid_ConfirmDeleteCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Grid_ConfirmDeleteOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Grid_ConfirmDeleteText" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer cet enregistrement ?</value>
+  </data>
+  <data name="Grid_ConfirmDeleteTitle" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Grid_Create" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="Grid_Create1" xml:space="preserve">
+    <value>Ajouter un nouvel enregistrement</value>
+  </data>
+  <data name="Grid_Delete" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="Grid_Delete1" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Grid_DialogClose" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Grid_Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Grid_DragItems" xml:space="preserve">
+    <value>Eléments sélectionnés</value>
+  </data>
+  <data name="Grid_Edit" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="Grid_Edit1" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="Grid_Excel" xml:space="preserve">
+    <value>Exporter vers Excel</value>
+  </data>
+  <data name="Grid_Lock" xml:space="preserve">
+    <value>Bloquer</value>
+  </data>
+  <data name="Grid_NoRecords" xml:space="preserve">
+    <value>Aucun enregistrement disponible.</value>
+  </data>
+  <data name="Grid_NoRecords1" xml:space="preserve">
+    <value>Aucun dossier disponible.</value>
+  </data>
+  <data name="Grid_SaveChanges" xml:space="preserve">
+    <value>Enregistrer les modifications</value>
+  </data>
+  <data name="Grid_Search" xml:space="preserve">
+    <value>Recherche...</value>
+  </data>
+  <data name="Grid_Select" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="Grid_SortAscending" xml:space="preserve">
+    <value>Tri croissant</value>
+  </data>
+  <data name="Grid_SortAscending1" xml:space="preserve">
+    <value>Tri Croissant</value>
+  </data>
+  <data name="Grid_SortDescending" xml:space="preserve">
+    <value>Tri décroissant</value>
+  </data>
+  <data name="Grid_SortDescending1" xml:space="preserve">
+    <value>Tri Décroissant</value>
+  </data>
+  <data name="Grid_SortedAscending" xml:space="preserve">
+    <value>Trier en ordre croissant</value>
+  </data>
+  <data name="Grid_SortedDescending" xml:space="preserve">
+    <value>Trier en ordre décroissant</value>
+  </data>
+  <data name="Grid_Unlock" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="Grid_Update" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Grid_Update1" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="Group_Empty" xml:space="preserve">
+    <value>Faites glisser un en-tête de colonne et déposer ici pour grouper par cette colonne.</value>
+  </data>
+  <data name="Group_Empty1" xml:space="preserve">
+    <value>Faites glisser un en-tête de colonne et déposez-le ici pour regrouper par cette colonne.</value>
+  </data>
+  <data name="Legal" xml:space="preserve">
+    <value>Tous droits réservés - Mentions légales</value>
+  </data>
+  <data name="MultiSelect_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="MultiSelect_NoData" xml:space="preserve">
+    <value>Pas de données</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="NumericTextBox_DecreaseValue" xml:space="preserve">
+    <value>Diminution de la valeur</value>
+  </data>
+  <data name="NumericTextBox_IncreaseValue" xml:space="preserve">
+    <value>Augmenter la valeur</value>
+  </data>
+  <data name="Optional_Label" xml:space="preserve">
+    <value>En option</value>
+  </data>
+  <data name="Pager_AllPages" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Pager_AllPages1" xml:space="preserve">
+    <value>Tout</value>
+  </data>
+  <data name="Pager_Display" xml:space="preserve">
+    <value>Afficher les items {0} - {1} de {2}</value>
+  </data>
+  <data name="Pager_Display1" xml:space="preserve">
+    <value>{0} - {1} d' {2} items</value>
+  </data>
+  <data name="Pager_Empty" xml:space="preserve">
+    <value>Aucun enregistrement à afficher.</value>
+  </data>
+  <data name="Pager_Empty1" xml:space="preserve">
+    <value>Aucun élément à afficher</value>
+  </data>
+  <data name="Pager_First" xml:space="preserve">
+    <value>Aller à la première page</value>
+  </data>
+  <data name="Pager_First1" xml:space="preserve">
+    <value>Aller à la première page</value>
+  </data>
+  <data name="Pager_ItemsPerPage" xml:space="preserve">
+    <value>articles par page</value>
+  </data>
+  <data name="Pager_ItemsPerPage1" xml:space="preserve">
+    <value>Eléments par page</value>
+  </data>
+  <data name="Pager_Last" xml:space="preserve">
+    <value>Aller à la dernière page</value>
+  </data>
+  <data name="Pager_Last1" xml:space="preserve">
+    <value>Aller à la dernière page</value>
+  </data>
+  <data name="Pager_MorePages" xml:space="preserve">
+    <value>Plusieurs pages</value>
+  </data>
+  <data name="Pager_MorePages1" xml:space="preserve">
+    <value>Plus de pages</value>
+  </data>
+  <data name="Pager_Next" xml:space="preserve">
+    <value>Aller à la page suivante</value>
+  </data>
+  <data name="Pager_Next1" xml:space="preserve">
+    <value>Aller à la page suivante</value>
+  </data>
+  <data name="Pager_Of" xml:space="preserve">
+    <value>de {0}</value>
+  </data>
+  <data name="Pager_Of1" xml:space="preserve">
+    <value>de {0}</value>
+  </data>
+  <data name="Pager_Page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="Pager_Page1" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="Pager_Previous" xml:space="preserve">
+    <value>Aller à la page précédente</value>
+  </data>
+  <data name="Pager_Previous1" xml:space="preserve">
+    <value>Aller à la page précédente</value>
+  </data>
+  <data name="Pager_Refresh" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="Pager_Refresh1" xml:space="preserve">
+    <value>Rafraîchir</value>
+  </data>
+  <data name="Scheduler" xml:space="preserve">
+    <value>Calendrier</value>
+  </data>
+  <data name="Scheduler_AllDay" xml:space="preserve">
+    <value>Jour entier</value>
+  </data>
+  <data name="Scheduler_AllEvents" xml:space="preserve">
+    <value>Tous les événements</value>
+  </data>
+  <data name="Scheduler_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Scheduler_ConfirmDeleteCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Scheduler_ConfirmDeleteOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Scheduler_ConfirmDeleteText" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer cet événement ?</value>
+  </data>
+  <data name="Scheduler_ConfirmDeleteTitle" xml:space="preserve">
+    <value>Supprimer l'événement</value>
+  </data>
+  <data name="Scheduler_Day" xml:space="preserve">
+    <value>Jour</value>
+  </data>
+  <data name="Scheduler_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Scheduler_DialogClose" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Scheduler_Editor_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Scheduler_Editor_EditorTitle" xml:space="preserve">
+    <value>Événement</value>
+  </data>
+  <data name="Scheduler_Editor_End" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="Scheduler_Editor_EndTimeRequiredValidationMessage" xml:space="preserve">
+    <value>L'heure de fin est requise.</value>
+  </data>
+  <data name="Scheduler_Editor_EndTimeValueValidationMessage" xml:space="preserve">
+    <value>L'heure de fin doit être postérieure à l'heure de début.</value>
+  </data>
+  <data name="Scheduler_Editor_IsAllDay" xml:space="preserve">
+    <value>Événement de toute la journée</value>
+  </data>
+  <data name="Scheduler_Editor_Repeat" xml:space="preserve">
+    <value>Répéter</value>
+  </data>
+  <data name="Scheduler_Editor_Start" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="Scheduler_Editor_StartTimeRequiredValidationMessage" xml:space="preserve">
+    <value>L'heure de début est requise.</value>
+  </data>
+  <data name="Scheduler_Editor_StartTimeValueValidationMessage" xml:space="preserve">
+    <value>L'heure de début doit être antérieure à l'heure de fin.</value>
+  </data>
+  <data name="Scheduler_Editor_Title" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="Scheduler_Editor_TitleRequiredValidationMessage" xml:space="preserve">
+    <value>Le titre est obligatoire.</value>
+  </data>
+  <data name="Scheduler_Month" xml:space="preserve">
+    <value>Mois</value>
+  </data>
+  <data name="Scheduler_MultiDay" xml:space="preserve">
+    <value>Plusieurs jours</value>
+  </data>
+  <data name="Scheduler_Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Scheduler_Previous" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="Scheduler_Recurrence_DeleteRecurring" xml:space="preserve">
+    <value>Voulez-vous supprimer uniquement cette occurrence d'événement ou toute la série ?</value>
+  </data>
+  <data name="Scheduler_Recurrence_DeleteWindowOccurrence" xml:space="preserve">
+    <value>Supprimer l'occurrence actuelle</value>
+  </data>
+  <data name="Scheduler_Recurrence_DeleteWindowSeries" xml:space="preserve">
+    <value>Supprimer la série</value>
+  </data>
+  <data name="Scheduler_Recurrence_DeleteWindowTitle" xml:space="preserve">
+    <value>Supprimer un rendez-vous récurrent</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Daily_Interval" xml:space="preserve">
+    <value>jour(s)</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Daily_RepeatEvery" xml:space="preserve">
+    <value>Répétez chaque</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_End_After" xml:space="preserve">
+    <value>Après</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_End_Label" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_End_Never" xml:space="preserve">
+    <value>Jamais</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_End_Occurrence" xml:space="preserve">
+    <value>occurrence(s)</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_End_On" xml:space="preserve">
+    <value>Sur</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Frequencies_Daily" xml:space="preserve">
+    <value>Quotidien</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Frequencies_Monthly" xml:space="preserve">
+    <value>Mensuel</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Frequencies_Never" xml:space="preserve">
+    <value>Jamais</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Frequencies_Weekly" xml:space="preserve">
+    <value>Hebdomadaire</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Frequencies_Yearly" xml:space="preserve">
+    <value>Annuel</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Monthly_Day" xml:space="preserve">
+    <value>Jour</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Monthly_Interval" xml:space="preserve">
+    <value>mois(s)</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Monthly_RepeatEvery" xml:space="preserve">
+    <value>Répétez chaque</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Monthly_RepeatOn" xml:space="preserve">
+    <value>Répétez sur</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_OffsetPositions_First" xml:space="preserve">
+    <value>premièr</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_OffsetPositions_Fourth" xml:space="preserve">
+    <value>quatrième</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_OffsetPositions_Last" xml:space="preserve">
+    <value>dernier</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_OffsetPositions_Second" xml:space="preserve">
+    <value>deuxième</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_OffsetPositions_Third" xml:space="preserve">
+    <value>troisième</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Weekdays_Day" xml:space="preserve">
+    <value>jour</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Weekdays_Weekday" xml:space="preserve">
+    <value>jour de semaine</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Weekdays_Weekend" xml:space="preserve">
+    <value>journée de week-end</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Weekly_Interval" xml:space="preserve">
+    <value>semaine(s)</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Weekly_RepeatEvery" xml:space="preserve">
+    <value>Répétez tous les</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Weekly_RepeatOn" xml:space="preserve">
+    <value>Répétez sur</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Yearly_Interval" xml:space="preserve">
+    <value>année(s)</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Yearly_Of" xml:space="preserve">
+    <value>de</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Yearly_RepeatEvery" xml:space="preserve">
+    <value>Répétez tous les</value>
+  </data>
+  <data name="Scheduler_Recurrence_Editor_Yearly_RepeatOn" xml:space="preserve">
+    <value>Répétez sur</value>
+  </data>
+  <data name="Scheduler_Recurrence_EditRecurring" xml:space="preserve">
+    <value>Voulez-vous éditer seulement cette occurrence d'événement ou toute la série ?</value>
+  </data>
+  <data name="Scheduler_Recurrence_EditWindowOccurrence" xml:space="preserve">
+    <value>Modifier l'occurrence actuelle</value>
+  </data>
+  <data name="Scheduler_Recurrence_EditWindowSeries" xml:space="preserve">
+    <value>Modifier la série</value>
+  </data>
+  <data name="Scheduler_Recurrence_EditWindowTitle" xml:space="preserve">
+    <value>Modifier un rendez-vous récurrent</value>
+  </data>
+  <data name="Scheduler_Save" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="Scheduler_ShowFullDay" xml:space="preserve">
+    <value>Afficher la journée complète</value>
+  </data>
+  <data name="Scheduler_ShowWorkDay" xml:space="preserve">
+    <value>Afficher les heures d'ouverture</value>
+  </data>
+  <data name="Scheduler_Timeline" xml:space="preserve">
+    <value>Ligne du temps</value>
+  </data>
+  <data name="Scheduler_Today" xml:space="preserve">
+    <value>Aujourd'hui</value>
+  </data>
+  <data name="Scheduler_Week" xml:space="preserve">
+    <value>Semaine</value>
+  </data>
+  <data name="Selectyourroom" xml:space="preserve">
+    <value>Choisir votre salle</value>
+  </data>
+  <data name="Slider_Decrease" xml:space="preserve">
+    <value>Diminution</value>
+  </data>
+  <data name="Slider_Increase" xml:space="preserve">
+    <value>Augmentation</value>
+  </data>
+  <data name="SplitButton_Open" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="Start_Date" xml:space="preserve">
+    <value>Date de début</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Sujet</value>
+  </data>
+  <data name="Switch_OffLabel" xml:space="preserve">
+    <value>Désactiver</value>
+  </data>
+  <data name="Switch_OnLabel" xml:space="preserve">
+    <value>Activer</value>
+  </data>
+  <data name="TimePicker_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="TimePicker_Day" xml:space="preserve">
+    <value>Jour</value>
+  </data>
+  <data name="TimePicker_DayPeriod" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="TimePicker_Era" xml:space="preserve">
+    <value>Ère</value>
+  </data>
+  <data name="TimePicker_Hour" xml:space="preserve">
+    <value>Heure</value>
+  </data>
+  <data name="TimePicker_Minute" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="TimePicker_Month" xml:space="preserve">
+    <value>Mois</value>
+  </data>
+  <data name="TimePicker_Now" xml:space="preserve">
+    <value>Maintenant</value>
+  </data>
+  <data name="TimePicker_Quarter" xml:space="preserve">
+    <value>Trimestre</value>
+  </data>
+  <data name="TimePicker_Second" xml:space="preserve">
+    <value>Deuxièmement</value>
+  </data>
+  <data name="TimePicker_Set" xml:space="preserve">
+    <value>Définir</value>
+  </data>
+  <data name="TimePicker_ToggleClock" xml:space="preserve">
+    <value>Basculer l'horloge</value>
+  </data>
+  <data name="TimePicker_WeekDay" xml:space="preserve">
+    <value>En semaine</value>
+  </data>
+  <data name="TimePicker_Year" xml:space="preserve">
+    <value>Année</value>
+  </data>
+  <data name="TimePicker_Zone" xml:space="preserve">
+    <value>Zone</value>
+  </data>
+  <data name="TitleReservation" xml:space="preserve">
+    <value>Votre réservation</value>
+  </data>
+  <data name="TitleUserDataGrid" xml:space="preserve">
+    <value>Tableau des utilisateurs</value>
+  </data>
+  <data name="TreeList_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="TreeList_ConfirmDeleteCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="TreeList_ConfirmDeleteOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="TreeList_ConfirmDeleteText" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer cet enregistrement ?</value>
+  </data>
+  <data name="TreeList_ConfirmDeleteTitle" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="TreeList_Create" xml:space="preserve">
+    <value>Ajouter un nouvel enregistrement</value>
+  </data>
+  <data name="TreeList_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="TreeList_DialogClose" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="TreeList_Edit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="TreeList_NoRecords" xml:space="preserve">
+    <value>Aucun dossier disponible.</value>
+  </data>
+  <data name="TreeList_Search" xml:space="preserve">
+    <value>Recherche...</value>
+  </data>
+  <data name="TreeList_SortedAscending" xml:space="preserve">
+    <value>Triés par ordre croissant</value>
+  </data>
+  <data name="TreeList_SortedDescending" xml:space="preserve">
+    <value>Triés par ordre décroissant</value>
+  </data>
+  <data name="TreeList_Update" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="Upload_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Upload_Clear" xml:space="preserve">
+    <value>Fini</value>
+  </data>
+  <data name="Upload_FileStatusFailed" xml:space="preserve">
+    <value>Le téléchargement du fichier a échoué.</value>
+  </data>
+  <data name="Upload_FileStatusUploaded" xml:space="preserve">
+    <value>Fichier téléchargé avec succès.</value>
+  </data>
+  <data name="Upload_HeaderStatusUploaded" xml:space="preserve">
+    <value>Fini</value>
+  </data>
+  <data name="Upload_HeaderStatusUploading" xml:space="preserve">
+    <value>Téléchargement...</value>
+  </data>
+  <data name="Upload_InvalidFileExtension" xml:space="preserve">
+    <value>Le type de fichier n'est pas autorisé.</value>
+  </data>
+  <data name="Upload_InvalidMaxFileSize" xml:space="preserve">
+    <value>La taille du fichier est trop importante.</value>
+  </data>
+  <data name="Upload_InvalidMinFileSize" xml:space="preserve">
+    <value>La taille du fichier est trop petite.</value>
+  </data>
+  <data name="Upload_Remove" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Upload_Retry" xml:space="preserve">
+    <value>Réessayer</value>
+  </data>
+  <data name="Upload_SelectFiles" xml:space="preserve">
+    <value>Sélectionner les fichiers...</value>
+  </data>
+  <data name="Upload_UploadFiles" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="Wizard_Done" xml:space="preserve">
+    <value>Fini</value>
+  </data>
+  <data name="Wizard_Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Wizard_Pager" xml:space="preserve">
+    <value>Etapes {0} de {1}</value>
+  </data>
+  <data name="Wizard_Previous" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+</root>

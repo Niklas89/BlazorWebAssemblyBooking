@@ -1,0 +1,89 @@
+﻿@inject ITelerikStringLocalizer Localizer
+@inject ISettingService SettingService
+
+<div class="logo">
+    <a href="/" title="Home"><img src="img/logo.png" alt="Logo"></a>
+</div>
+
+<div class="top-row ps-3 navbar navbar-light bg-light navbar-toggler-wrapper">
+    <div class="container-fluid">
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass menunav" @onclick="ToggleNavMenu">
+    <nav class="flex-nav">
+        <div class="nav-item itemleft px-2">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                 @Localizer[nameof(TelerikMessages.Scheduler)]
+            </NavLink>
+        </div>
+        <div class="nav-item itemleft px-2">
+            <NavLink class="nav-link" @onclick="ToggleSubMenu">
+                @Localizer[nameof(TelerikMessages.Admin)]
+            </NavLink>
+                @if (expandSubNav)
+                {
+                    <ul class="nav flex-column">
+	                    <li class="nav-item itemleft px-2" @onclick="ToggleSubMenu">
+		                    <NavLink class="nav-link" href="Admin">
+			                    Utilisateurs
+		                    </NavLink>
+	                    </li>
+                    @foreach(var setting in SettingService.Settings)
+                    {
+                        if(setting.Name == "Rooms" && setting.Value == "1")
+                        {
+                            <li class="nav-item itemleft px-2" @onclick="ToggleSubMenu">
+		                        <NavLink class="nav-link" href="Room">
+			                        Salles
+		                        </NavLink>
+	                        </li>
+                        }
+                        if(setting.Name == "Statistics" && setting.Value == "1")
+                        {
+                            <li class="nav-item itemleft px-2" @onclick="ToggleSubMenu">
+		                        <NavLink class="nav-link" href="Stats">
+			                        Statistiques
+		                        </NavLink>
+	                        </li>
+                        }
+                    }
+                    </ul>
+                }
+        </div>
+        <div class="nav-item connect px-2">
+            <NavLink class="nav-link" href="#">
+                @Localizer[nameof(TelerikMessages.Connection)]
+            </NavLink>
+        </div>
+        <div class="nav-item language px-2">
+            <CultureChooser />
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private bool expandSubNav;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void ToggleSubMenu()
+    {
+        expandSubNav = !expandSubNav;
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await SettingService.GetSettings();
+    }
+}

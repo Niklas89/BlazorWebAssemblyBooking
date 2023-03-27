@@ -1,0 +1,131 @@
+﻿@inject IImageRoomService ImageRoomService
+@inject ITelerikStringLocalizer Localizer
+
+    @* Add a new room button *@
+     <div class="buttonTelerik">
+         <TelerikButton Icon="add" Size="lg" ThemeColor="primary" OnClick="@AddNewRoom">Ajouter</TelerikButton>
+    </div>
+
+<div class="k-card-deck flex-center flex-wrap">
+
+    @foreach (var room in ImageRoomService.ImageRooms)
+    {
+    <TelerikCard Width="300px"> 
+        @if (!string.IsNullOrEmpty(room.NameImage))
+        {
+            string base64String = Convert.ToBase64String(room.ContentImage, 0, room.ContentImage.Length); 
+            string imageRoom = "data:image/jpg;base64," + base64String;
+            <CardImage Src="@imageRoom"></CardImage>
+        } 
+        <CardBody>
+            <CardTitle>@room.Name</CardTitle>
+            <CardSubTitle>Capacité: @room.Capacity</CardSubTitle>
+           @if(!room.Availability)
+            {
+                <TelerikButton ThemeColor="@(ThemeConstants.Button.ThemeColor.Error)" Size="sm" Icon="x-circle">Unavailable</TelerikButton>
+            }
+        </CardBody>
+        <CardFooter>
+            <CardActions>
+                <TelerikButton OnClick="@(() => Edit(room))" Icon="edit" FillMode="@(ThemeConstants.Button.FillMode.Link)" 
+                    ThemeColor="@(ThemeConstants.Button.ThemeColor.Primary)">@Localizer[nameof(TelerikMessages.Edit)]</TelerikButton>
+
+                <TelerikButton OnClick="@(() => Delete(room))" Icon="delete" FillMode="@(ThemeConstants.Button.FillMode.Link)" 
+                    ThemeColor="@(ThemeConstants.Button.ThemeColor.Error)">@Localizer[nameof(TelerikMessages.Delete)]</TelerikButton>
+            </CardActions>
+        </CardFooter>
+    </TelerikCard>
+    }
+</div>
+
+    @* Open modal window when clicking on button to add a new room*@
+    <TelerikWindow Modal="true" 
+        Resizable="true"
+        MinHeight="700px"
+        Height="700px"
+        MinWidth="400px"
+        Width="550px"
+        Visible="@CustomEditFormShown" CloseOnOverlayClick="true">
+        <WindowTitle>Gérer une salle</WindowTitle>
+        <WindowActions>
+            <WindowAction Name="Close" OnClick="@RefreshData" />
+        </WindowActions>
+        <WindowContent>
+            <RoomEditor SelectedRoom="@CurrentRoom" OnSave="@Save" OnDeleteImage="@DeleteImageUpdateRoom" OnRoomChanged="@RefreshData" />
+        </WindowContent>
+    </TelerikWindow>
+
+
+@code {
+    // custom edit form
+    bool CustomEditFormShown { get; set; }
+    RoomDto CurrentRoom { get; set; }
+    RoomDto OriginalRoom { get; set; }
+
+    // When clicked on "Room" button
+    void AddNewRoom(MouseEventArgs evArgs)
+    {
+        // Set to Modal Window to visible
+        CustomEditFormShown = true;
+        // Create a new empty room
+        CurrentRoom = new RoomDto() { Id = Guid.NewGuid() };
+    }
+
+    // Refresh the rooms list after edit or add
+    async Task RefreshData()
+    {
+        CustomEditFormShown = false;
+        CurrentRoom = OriginalRoom = null;
+
+        // Load all rooms in the rooms list
+        await ImageRoomService.GetRooms();
+    }
+
+    // Edit a room
+    void Edit(RoomDto room)
+    {
+        // Set the original room we want to edit in OriginalRoom
+        OriginalRoom = room;
+        // The changes of the room are set to CurrentRoom
+        CurrentRoom = room;
+        // Enable the modal window to be visible
+        CustomEditFormShown = true;
+
+    }
+
+    // Save action after edit or add room in modal window
+    async Task Save()
+    {
+        // If there was an edit action on the room, we update, otherwize we create the room
+        if(OriginalRoom != null)
+        {
+            await ImageRoomService.UpdateRoom(CurrentRoom);
+        } else
+        {
+            await ImageRoomService.CreateRoom(CurrentRoom);
+        }
+
+        await RefreshData();
+    }
+
+    async Task DeleteImageUpdateRoom()
+    {
+        await ImageRoomService.DeleteImageUpdateRoom(CurrentRoom);
+        await RefreshData();
+    }
+
+    // Delete a room
+    async Task Delete(RoomDto room)
+    {
+        await ImageRoomService.DeleteRoom(room);
+
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        // On page load, get the list of all rooms
+        await ImageRoomService.GetRooms();
+        
+    }
+    
+}

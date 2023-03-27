@@ -1,14 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ApsideBookingRoomApp",
-    "\\ApsideBookingRoomApp\\ApsideBookingRoomApp",
-    "\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Client",
-    "\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server",
-    "\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\Controllers",
-    "\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Server\\Data",
-    "\\ApsideBookingRoomApp\\ApsideBookingRoomApp\\Shared",
-    "\\ApsideBookingRoomDB"
+    ""
   ],
+  "SelectedNode": "\\MeetingRoomBooking.sln",
   "PreviewInSolutionExplorer": false
 }

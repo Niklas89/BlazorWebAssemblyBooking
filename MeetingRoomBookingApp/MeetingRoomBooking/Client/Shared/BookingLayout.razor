@@ -1,0 +1,51 @@
+﻿@layout TelerikLayout
+@inherits LayoutComponentBase
+
+<div class="page">
+    <main>
+        <div class="nav-menu">
+            
+            <AuthorizeView>
+                <Authorized>
+                    <TelerikNavMenuConnected />
+                </Authorized>
+                <NotAuthorized>
+                    <NavMenuNotConnected />
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
+
+        <article class="content px-2">
+            @Body
+        </article>
+
+        <footer>
+			<BookingFooter />	
+		</footer>
+
+        @* login style:https://getbootstrap.com/docs/5.2/examples/sign-in/
+        <AuthorizeView>
+            <Authorized>
+
+                <div class="nav-menu">
+                    <TelerikNavMenuConnected />
+                </div>
+
+                <article class="content px-2">
+                    @Body
+                </article>
+
+                <footer>
+                    <BookingFooter />
+                </footer>
+
+            </Authorized>
+            <NotAuthorized>
+                <NavMenuNotConnected />
+            </NotAuthorized>
+        </AuthorizeView>
+
+        *@
+    </main>
+
+</div>

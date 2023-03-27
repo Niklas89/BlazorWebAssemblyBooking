@@ -1,0 +1,111 @@
+.navbar-toggler {
+    color: white;
+}
+
+.container-fluid {
+    justify-content: flex-end;
+    padding-top:10px;
+    margin-bottom:50px;
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+}
+
+.bg-light {
+    --bs-bg-opacity: 0 !important;
+}
+
+
+.logo {
+    margin-top:10px;
+    margin-left:10px;
+    float:left;
+}
+
+.oi {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item ::deep a {
+        color: #464646;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+        .nav-item ::deep a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: #e79759;
+        }
+
+        .nav-item ::deep a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: #e79759;
+        }
+
+.connect {
+    font-weight: normal;
+}
+
+.language {
+    margin-left:18px;
+}
+
+.flex-nav {
+    flex-direction: column;
+}
+
+/* changed from initial 641px width to 1335px, because Telerik Scheduler switches to mobile view at 1000px
+    and Connection link in nav menu is hidden below 1335px */
+@media (min-width: 1335px) {
+    .navbar-toggler, navbar-toggler-wrapper {
+        display: none;
+    }
+
+    .bg-light {
+        --bs-bg-opacity: 0 !important;
+    }
+
+    .menunav {
+        width: 90%;
+    }
+
+
+    .flex-nav {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+
+    .connect {
+        position: absolute;
+        top: 25px;
+        right: 80px;
+    }
+
+    .language {
+        position: absolute;
+        top: 30px;
+        right: 10px;
+    }
+
+    .collapse {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+    
+}

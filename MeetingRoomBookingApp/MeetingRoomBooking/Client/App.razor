@@ -1,0 +1,20 @@
+﻿<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(BookingLayout)">
+                <NotAuthorized>
+                    @*<h3>Whoops! You're not allowed to see this page.</h3>
+                    <h5>Please <a href="login">login</a> or <a href="register">register</a> for a new account.</h5>*@
+                    <MeetingRoomBooking.Client.Pages.Login />
+                </NotAuthorized>
+            </AuthorizeRouteView>
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="@typeof(BookingLayout)">
+                <p role="alert">Sorry, there’s nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>

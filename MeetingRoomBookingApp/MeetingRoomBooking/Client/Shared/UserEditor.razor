@@ -1,0 +1,87 @@
+﻿@inject IUserService UserService
+@inject IRoleService RoleService
+@inject ITelerikStringLocalizer Localizer
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@SelectedUser" OnValidSubmit="@Save">
+            <DataAnnotationsValidator />
+            @* <TelerikValidationSummary />  *@
+            <div class="form-row">
+                <div class="col userfield">
+                    <label>@Localizer[nameof(TelerikMessages.Name)]</label>
+                    <TelerikTextBox @bind-Value="@SelectedUser.FullName" Id="FullName"></TelerikTextBox>
+                    <TelerikValidationMessage For="@(() => SelectedUser.FullName)" />
+                    <TelerikValidationTooltip For="@(() => SelectedUser.FullName)" TargetSelector="#FullName" />
+                </div>
+                <div class="col userfield">
+                    <label>Email</label>
+                    <TelerikTextBox @bind-Value="@SelectedUser.Mail"></TelerikTextBox>
+                    <TelerikValidationMessage For="@(() => SelectedUser.Mail)" />
+                    <TelerikValidationTooltip For="@(() => SelectedUser.Mail)" TargetSelector="#Mail" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col userfield">
+                    <label>Role</label>
+
+                    <TelerikComboBox Data="@RoleService.Roles" TextField="RoleName" Id="Role" ValueField="Id" 
+                    @bind-Value="IdRoleSelected" OnChange="@OnChangeRoleSelection">
+                       </TelerikComboBox>
+                    <TelerikValidationMessage For="@(() => SelectedUser.RoleName)" />
+                    <TelerikValidationTooltip For="@(() => SelectedUser.RoleName)" TargetSelector="#Role" />
+                    
+                </div>
+            </div>
+            <div class="form-row validation">
+                <TelerikButton Icon="save" ThemeColor="primary" ButtonType="@ButtonType.Submit">Save</TelerikButton>
+                <TelerikButton Icon="cancel" OnClick="@ClearSelection" ButtonType="@ButtonType.Button">Cancel</TelerikButton>
+            </div>
+        </EditForm>
+
+@code {
+
+    [Parameter] 
+    public UserDto SelectedUser { get; set; }
+
+    [Parameter]
+    public EventCallback<UserDto> SelectedUserChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<UserDto> OnSave { get; set; }
+
+    [Parameter]
+    public EventCallback OnClear { get; set; }
+
+    [Parameter]
+    public byte IdRoleSelected { get; set; }
+
+
+    void OnChangeRoleSelection(object roleSelect)
+    {
+        if(roleSelect != null)
+        {
+            SelectedUser.IdRole = IdRoleSelected;
+            var role = RoleService.Roles.FirstOrDefault(u => u.Id == IdRoleSelected);
+            SelectedUser.RoleName = role.RoleName;
+        }
+        
+    }
+
+    async Task Save()
+    {
+        await SelectedUserChanged.InvokeAsync(SelectedUser);
+        await OnSave.InvokeAsync();
+    }
+
+    async Task ClearSelection()
+    {
+        await OnClear.InvokeAsync();
+    }
+
+    // When we want to edit a user we have to get his IdRole, so that it appears on the select input as default value
+    protected override void OnInitialized()
+    {
+        IdRoleSelected = SelectedUser.IdRole;
+    }
+
+}

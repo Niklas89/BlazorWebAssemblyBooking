@@ -1,0 +1,128 @@
+﻿@inject IUserService UserService
+@inject IRoleService RoleService
+@inject ITelerikStringLocalizer Localizer
+
+<h1>@Localizer[nameof(TelerikMessages.TitleUserDataGrid)]</h1>
+@* Telerik Blazor Grid with some common features *@
+
+<TelerikGrid Data="@UserService.Users"
+             
+             Pageable="true"
+             Sortable="true"
+             ConfirmDelete="true"
+             FilterMode="@GridFilterMode.FilterRow"
+             Resizable="true"
+             PageSize="15"
+             Navigable="true"
+             OnDelete="@Delete">
+
+    <GridColumns>
+        <GridColumn Field="@(nameof(UserDto.FullName))" Title=@Localizer[nameof(TelerikMessages.Name)] />
+        <GridColumn Field="@(nameof(UserDto.Mail))" Title="Email"/>
+        <GridColumn Field="@(nameof(UserDto.RoleName))" Title="Role"/>
+         <GridCommandColumn>
+            <GridCommandButton OnClick="@((args)=> SelectUser(args.Item as UserDto))" Icon="edit">@Localizer[nameof(TelerikMessages.Edit)]</GridCommandButton>
+            <GridCommandButton Command="Delete" Icon="delete">@Localizer[nameof(TelerikMessages.Delete)]</GridCommandButton>
+        </GridCommandColumn>
+    </GridColumns>
+    <GridToolBar>
+        <TelerikButton Icon="add" ThemeColor="primary" OnClick="@Add">@Localizer[nameof(TelerikMessages.AddUser)]</TelerikButton>
+    </GridToolBar>
+</TelerikGrid>
+
+<TelerikWindow Class="demo-window" Width="500px" Height="450px" MinHeight="450px" MinWidth="280px" Centered="true" @bind-Visible=@WindowVisible Modal="true">
+    <WindowTitle>
+        <strong>@Localizer[nameof(TelerikMessages.AddorModifyUser)]</strong>
+    </WindowTitle>
+    <WindowActions>
+        <WindowAction Name="Close" />
+    </WindowActions>
+    <WindowContent>
+        <UserEditor @bind-SelectedUser="@WindowSelectedUser" OnSave="@Save" OnClear="@ClearSelection" />
+    </WindowContent>
+</TelerikWindow>
+
+@code {
+
+    public bool WindowVisible { get; set; }
+    UserDto WindowSelectedUser { get; set; } 
+    UserDto OriginalUser { get; set; }
+    public byte IdRoleSelected { get; set; }
+
+    // Open Modal Window for Add user action
+    async Task Add(MouseEventArgs evArgs)
+    {
+        // Create a new empty user
+        WindowSelectedUser = new UserDto(){ Id = Guid.NewGuid() };
+        // Set to Modal Window to visible
+        WindowVisible = true;
+        // Get the roles so the user can choose a role in the list
+        await RoleService.GetRoles();
+
+    }
+
+    // Save action after edit or add user in modal window
+    async Task Save()
+    {
+        // If there was an edit action on the user, we update, otherwize we create the user
+        if(OriginalUser != null)
+        {
+            await UserService.UpdateUser(WindowSelectedUser);
+        } else
+        {
+            await UserService.CreateUser(WindowSelectedUser);
+        }
+
+        await RefreshData();
+    }
+
+    // Refresh the data and get all the users after any action
+    async Task RefreshData()
+    {
+        // Set the Modal Window visibility to false
+        WindowVisible = false;
+
+        // Set the user variables to null, because we don't need them anymore after edit or add
+        OriginalUser = WindowSelectedUser = null;
+
+        await UserService.GetUsers();
+    }
+
+    void ClearSelection()
+    {
+        WindowVisible = false;
+        OriginalUser = WindowSelectedUser = null;
+    }
+
+    // Edit a user
+    async Task SelectUser(UserDto item)
+    {
+        // Set the original user we want to edit in OriginalUser
+        OriginalUser = item;
+        // The changes of the user are set to WindowSelectedUser
+        WindowSelectedUser = item;
+        // Enable the modal window to be visible
+        WindowVisible = true;
+
+        // Get a list of roles that we can view in the modal window
+        await RoleService.GetRoles();
+
+    }
+
+    // Delete a user
+    async Task Delete(GridCommandEventArgs args)
+    {
+        UserDto item = (UserDto)args.Item; 
+        await UserService.DeleteUser(item);
+
+    }
+  
+    // Get all the users when the page loads
+    protected async override Task OnInitializedAsync()
+    {
+
+        await UserService.GetUsers();
+
+    }
+
+}

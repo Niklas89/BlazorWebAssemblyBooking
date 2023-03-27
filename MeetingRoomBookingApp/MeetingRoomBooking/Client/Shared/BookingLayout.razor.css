@@ -1,0 +1,48 @@
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+main {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-menu {
+    margin-bottom:20px;
+}
+
+.content {
+    margin-top: 60px;
+}
+
+
+/* changed from initial 641px width to 1335px, because Telerik Scheduler switches to mobile view at 1000px
+    and Connection link in nav menu is hidden below 1335px */
+@media (min-width: 1300px) {
+    .page {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    article {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+}

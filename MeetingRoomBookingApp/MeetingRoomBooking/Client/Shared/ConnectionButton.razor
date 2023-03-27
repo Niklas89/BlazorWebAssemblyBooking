@@ -1,0 +1,26 @@
+﻿@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@inject ITelerikStringLocalizer Localizer
+
+<AuthorizeView>
+    <Authorized>
+        <button @onclick="Logout">Logout</button>
+        <a class="nav-link" href="profile">Profile</a>
+    </Authorized>
+    <NotAuthorized>
+       <!-- return to current page after login k-item-text nav-link k-font-weight-bold  -->
+       <a class="nav-link" href="login?returnUrl=@NavigationManager.ToBaseRelativePath(NavigationManager.Uri)">
+           @Localizer[nameof(TelerikMessages.Connection)]
+       </a>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private async Task Logout()
+    {
+        await LocalStorage.RemoveItemAsync("authToken");
+        await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        NavigationManager.NavigateTo("");
+    }
+}

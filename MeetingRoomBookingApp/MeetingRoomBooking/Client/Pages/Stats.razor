@@ -1,0 +1,7 @@
+﻿@page "/stats"
+@attribute [Authorize(Roles = "admin")]
+
+<PageTitle>Statistiques</PageTitle>
+
+<BookingStatsChart />
+<BookingStatsDonut />

@@ -1,0 +1,56 @@
+﻿
+@inject ITelerikStringLocalizer Localizer
+@inject ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+
+
+    @if(CultureInfo.CurrentCulture.Name == "fr-FR")
+    {
+        <TelerikButton OnClick="@OnClickFlag" ImageUrl="img/kingdom_united_icon.png"  Size="sm"/>
+    } else
+    {
+        <TelerikButton OnClick="@OnClickFlag" ImageUrl="img/france_icon.png" Size="sm"/>
+    }
+
+
+
+@code{
+    private protected readonly CultureInfo[] SupportedCultures = new[]
+       {
+            new CultureInfo("en-US"),
+            new CultureInfo("fr-FR")
+    };
+
+    public string Language { get; set; } = CultureInfo.CurrentCulture.Name;
+
+    private protected CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+
+                localStorage.SetItemAsync<string>("culture", value.Name);
+
+                NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+            }
+        }
+    }
+
+    void OnClickFlag(MouseEventArgs evArgs)
+    {
+        if (CultureInfo.CurrentCulture.Name == "fr-FR")
+        {
+            localStorage.SetItemAsync<string>("culture", "en-US");
+            NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+        } else
+        {
+            localStorage.SetItemAsync<string>("culture", "fr-FR");
+            NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+        }
+    }
+
+
+}

@@ -1,0 +1,320 @@
+﻿@inject ITelerikStringLocalizer Localizer
+@inject ISettingService SettingService
+@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@using System.Security.Claims
+
+<TelerikMediaQuery Media="(max-width: 560px)" OnChange="@SmallMediaQueryChange"></TelerikMediaQuery>
+<TelerikMediaQuery Media="(min-width: 560px) and (max-width: 828px)" OnChange="@MediumMediaQueryChange"></TelerikMediaQuery>
+@* break point intended for 768px, however, the demo has two paddings 30px each that lead to the new 828px break point *@
+<TelerikMediaQuery Media="(min-width: 828px)" OnChange="@LargeMediaQueryChange"></TelerikMediaQuery>
+
+@* https://docs.telerik.com/blazor-ui/components/menu/templates *@
+@* https://demos.telerik.com/blazor-ui/menu/adaptive *@
+
+
+<div class="demo-menu-container">
+    @{
+        if (WindowSize == DemoWindowSize.Large)
+        {
+            <div class="logo">
+                <a href="/" title="Home"><img src="img/logo.png" alt="Logo"></a>
+            </div>
+        }
+        else
+        {
+            if (IsDrawerOpen)
+            {
+                <TelerikButton OnClick="(() => IsDrawerOpen = false)" Icon="x" FillMode="@(ThemeConstants.Button.FillMode.Flat)"></TelerikButton>
+            }
+            else
+            {
+                <TelerikButton OnClick="@ToggleDrawer" Icon="menu" FillMode="@(ThemeConstants.Button.FillMode.Flat)"></TelerikButton>
+            }
+        }
+    }
+
+    <span class="separator"></span>
+    @{
+        if (WindowSize == DemoWindowSize.Large)
+        {
+            <TelerikMenu Data="@MenuItems" OnClick="@((MenuItem item) => OnClick(item))">
+                <ItemTemplate Context="item">
+                    @{
+                        if (EqualityComparer<MenuItem>.Default.Equals(item, SelectedMenuItem))
+                        {
+                        @*k-menu-link-text will expand the span to match default Menu styling*@
+                        <span style="color: #464646; font-weight: bold">@item.Text</span>
+                        }
+                        else
+                        {
+                            string target = "";
+                            if (!IsInternalPage(item.Url))
+                            {
+                                target = "_blank";
+                            }
+                        @*k-menu-link-text will expand the NavLink to match default Menu styling*@
+                        <NavLink style="color: #e79759; font-weight: bold" target="@target" class="nav-link" href="@item.Url">@item.Text</NavLink>
+                        }
+                }
+            </ItemTemplate>
+        </TelerikMenu>
+
+            <div class="nav-item connect px-2">
+                <ConnectionButton />
+            </div>
+            <div class="nav-item language px-2">
+                <CultureChooser />
+            </div>
+        }
+    }
+</div>
+
+@* mobile menu view below *@
+<TelerikDrawer @ref="@Drawer" Class="@DrawerClass" Data="DrawerItems" @bind-Expanded="IsDrawerOpen" Mode="@DrawerMode.Overlay">
+    <Template>
+        <div class="k-drawer-items" role="menubar" aria-orientation="vertical">
+            <ul>
+                @foreach (var item in context)
+                {
+                    var selectedClass = item == SelectedMenuItem ? "k-state-selected" : string.Empty;
+                    var boldClass = item.Text.ToLower() != "components" ? "k-font-weight-bold" : "";
+                    string target = "";
+
+                    if (item.Level == 0)
+                    {
+                        <li class="k-drawer-item k-drawer-separator"></li>
+                    }
+
+                    <li @onclick="@(() => OnItemSelect(item))" class="k-drawer-item @selectedClass k-level-@(item.Level)">
+                        @if (item.Expanded && (item.Items?.Any() ?? false))
+                        {
+                            <span class="k-icon k-i-arrow-chevron-up"></span>
+                        }
+                        else if (!item.Expanded && (item.Items?.Any() ?? false))
+                        {
+                            <span class="k-icon k-i-arrow-chevron-down"></span>
+                        }
+
+
+                        @if (!IsInternalPage(item.Url))
+                        {
+                            target = "_blank";
+                        }
+                        <a class="k-item-text nav-link @boldClass" target="@target" href="@item.Url">@item.Text</a>
+                    </li>
+
+                }
+
+                <li class="k-drawer-item k-drawer-separator"></li>
+
+                <li class="k-drawer-item k-state-selected k-level-0">
+                    <ConnectionButton />
+                </li>
+
+                <li class="k-drawer-item k-drawer-separator"></li>
+
+                <li class="k-drawer-item k-state-selected k-level-0">
+                    <CultureChooser />
+                </li>
+            </ul>
+        </div>
+    </Template>
+</TelerikDrawer>
+
+@code {
+    public bool IsDrawerOpen { get; set; } = false;
+    public string DrawerClass { get; set; }
+    public MenuItem SelectedMenuItem { get; set; }
+    public DemoWindowSize WindowSize { get; set; }
+    public TelerikDrawer<MenuItem> Drawer { get; set; }
+    public List<MenuItem> MenuItems { get; set; }
+    public List<MenuItem> DrawerItems { get; set; }
+    public bool authorized = false;
+
+    public class MenuItem
+    {
+        public string Text { get; set; }
+        public string Url { get; set; }
+        public bool Expanded { get; set; }
+        public int Level { get; set; }
+        public List<MenuItem> Items { get; set; }
+    }
+
+    public enum DemoWindowSize
+    {
+        Small,
+        Medium,
+        Large
+    }
+
+
+    public async Task ToggleDrawer()
+    {
+        await Drawer.ToggleAsync();
+    }
+
+    public async Task OnItemSelect(MenuItem selectedItem)
+    {
+        if (IsInternalPage(selectedItem.Url))
+        {
+            SelectedMenuItem = selectedItem;
+        }
+
+        SelectedMenuItem = selectedItem;
+
+        selectedItem.Expanded = !selectedItem.Expanded;
+        var newData = new List<MenuItem>();
+
+        foreach (var item in DrawerItems.Where(x => x.Level <= selectedItem.Level))
+        {
+            newData.Add(item);
+            if (item == selectedItem && selectedItem.Expanded && (item.Items?.Any() ?? false))
+            {
+                foreach (var child in item.Items)
+                {
+                    newData.Add(child);
+                }
+            }
+
+            if (item != selectedItem && !(item.Items?.Contains(selectedItem) ?? false))
+            {
+                item.Expanded = false;
+            }
+        }
+
+        DrawerItems = newData;
+
+        if (selectedItem.Level != 0)
+        {
+            await ToggleDrawer();
+        }
+
+        await Task.Yield();
+    }
+
+    public void SmallMediaQueryChange(bool matchesMediaQuery)
+    {
+        if (matchesMediaQuery)
+        {
+            WindowSize = DemoWindowSize.Small;
+            DrawerClass = "drawer-sm";
+        }
+    }
+
+    public void MediumMediaQueryChange(bool matchesMediaQuery)
+    {
+        if (matchesMediaQuery)
+        {
+            WindowSize = DemoWindowSize.Medium;
+            DrawerClass = "";
+        }
+    }
+
+    public async Task LargeMediaQueryChange(bool matchesMediaQuery)
+    {
+        if (matchesMediaQuery)
+        {
+            WindowSize = DemoWindowSize.Large;
+            DrawerClass = "";
+
+            if (IsDrawerOpen)
+            {
+                await Drawer.ToggleAsync();
+            }
+        }
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        string role = (await AuthenticationStateProvider.GetAuthenticationStateAsync())
+            .User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role).Value;
+        if (role.Contains("admin"))
+        {
+            authorized = true;
+        }
+
+        if (authorized)
+        {
+            MenuItems = new List<MenuItem>()
+            {
+            new MenuItem()
+            {
+                Text = Localizer[nameof(TelerikMessages.Scheduler)],
+                Url = "/",
+                Level = 0
+            },
+                new MenuItem()
+                {
+                    Text = Localizer[nameof(TelerikMessages.Admin)],
+                    Level = 0,
+                    Items = new List<MenuItem>()
+                    {
+                        new MenuItem()
+                        {
+                            Text = "Salles",
+                            Level = 1,
+                            Url = "Room"
+                        },
+                        new MenuItem()
+                        {
+                            Text = "Statistiques",
+                            Level = 1,
+                            Url = "Stats"
+                        },
+                        new MenuItem()
+                        {
+                            Text = "Utilisateurs",
+                            Level = 1,
+                            Url = "Admin"
+                        }
+                    }
+                }
+            };
+        }
+        else
+        {
+            MenuItems = new List<MenuItem>()
+            {
+                new MenuItem()
+                {
+                    Text = Localizer[nameof(TelerikMessages.Scheduler)],
+                    Url = "/",
+                    Level = 0
+                }
+            };
+        }
+
+
+        SelectedMenuItem = MenuItems.Find(item => CompareCurrentPageUrl(item.Url));
+
+        DrawerItems = MenuItems;
+
+        base.OnInitialized();
+    }
+
+    private void OnClick(MenuItem item)
+    {
+        if (IsInternalPage(item.Url))
+        {
+            SelectedMenuItem = item;
+        }
+    }
+
+    private bool CompareCurrentPageUrl(string urlToCopmare)
+    {
+        return NavigationManager.Uri.Substring(NavigationManager.BaseUri.Length - 1).Equals(urlToCopmare);
+    }
+
+    private bool IsInternalPage(string url)
+    {
+        if (string.IsNullOrEmpty(url))
+        {
+            return false;
+        }
+        return !(url.StartsWith("https://") || url.StartsWith("http://"));
+    }
+
+}

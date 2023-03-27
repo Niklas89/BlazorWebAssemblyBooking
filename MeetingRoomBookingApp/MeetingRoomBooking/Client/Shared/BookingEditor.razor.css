@@ -1,0 +1,26 @@
+﻿h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #183650;
+}
+
+form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+form div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 14px;
+    line-height: 2;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.validation {
+    padding-top:2em;
+}

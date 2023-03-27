@@ -1,0 +1,162 @@
+﻿@inject IBookingService BookingService
+@inject IRoomService RoomService
+@inject ITelerikStringLocalizer Localizer
+
+
+@* ------------------------------------------ First Chart ------------------------------------------ *@
+@*  more info: https://docs.telerik.com/blazor-ui/components/chart/types/area *@
+
+@*
+<div>
+    <TelerikChart>
+        <ChartTitle Text="Nombre de réservations par salle et par mois">
+        </ChartTitle>
+        <ChartLegend Visible="true" Position="ChartLegendPosition.Top"></ChartLegend>
+
+        <ChartSeriesItems>
+            <ChartSeries Color="red" Type="ChartSeriesType.Area" Name="Salle 1" Data="@room1obj">
+            </ChartSeries>
+            <ChartSeries Color="blue" Type="ChartSeriesType.Area" Name="Salle 2" Data="@room2obj">
+            </ChartSeries>
+            <ChartSeries Color="green" Type="ChartSeriesType.Area" Name="Salle 3" Data="@room3obj">
+            </ChartSeries>
+        </ChartSeriesItems>
+
+        <ChartValueAxes>
+            <ChartValueAxis Color="#464646"></ChartValueAxis>
+        </ChartValueAxes>
+
+        <ChartCategoryAxes>
+            <ChartCategoryAxis Color="#464646" Categories="@xAxisItems">
+                <ChartCategoryAxisLabels Color="#464646" Font="bold 12px 'Helvetica'"></ChartCategoryAxisLabels>
+            </ChartCategoryAxis>
+        </ChartCategoryAxes>
+    </TelerikChart>
+</div>
+
+ *@
+
+@* ------------------------------------------ Second Chart ------------------------------------------ *@
+@*  more info: https://docs.telerik.com/blazor-ui/components/chart/overview *@
+
+<div>
+    <TelerikChart>
+        <ChartTitle Text="Nombre de réservations par salle et par mois">
+            <ChartTitleMargin Top="50"></ChartTitleMargin>
+        </ChartTitle>
+        <ChartLegend Visible="true" Position="ChartLegendPosition.Top"></ChartLegend>
+
+        <ChartSeriesItems>
+            <ChartSeries Color="red" Type="ChartSeriesType.Line" Name="Salle 1" Data="@room1obj">
+            </ChartSeries>
+            <ChartSeries Color="blue" Type="ChartSeriesType.Line" Name="Salle 2" Data="@room2obj">
+            </ChartSeries>
+            <ChartSeries Color="green" Type="ChartSeriesType.Line" Name="Salle 3" Data="@room3obj">
+            </ChartSeries>
+        </ChartSeriesItems>
+
+        <ChartValueAxes>
+            <ChartValueAxis Color="#464646"></ChartValueAxis>
+        </ChartValueAxes>
+
+        <ChartCategoryAxes>
+            <ChartCategoryAxis Color="#464646" Categories="@xAxisItems">
+                <ChartCategoryAxisLabels Color="#464646" Font="bold 12px 'Helvetica'"></ChartCategoryAxisLabels>
+            </ChartCategoryAxis>
+        </ChartCategoryAxes>
+    </TelerikChart>
+</div>
+
+
+
+@* ------------------------------------------ Third Chart ------------------------------------------ *@
+@*  more info: https://docs.telerik.com/blazor-ui/components/chart/types/bar *@
+@*
+<div>
+    <TelerikChart Height="700px">
+        <ChartTitle Text="Nombre de réservations par salle et par mois">
+            <ChartTitleMargin Top="50"></ChartTitleMargin>
+        </ChartTitle>
+        <ChartLegend Visible="true" Position="ChartLegendPosition.Top"></ChartLegend>
+
+        <ChartSeriesItems>
+            <ChartSeries Color="red" Type="ChartSeriesType.Bar" Name="Salle 1" Data="@room1obj">
+            </ChartSeries>
+            <ChartSeries Color="yellow" Type="ChartSeriesType.Bar" Name="Salle 2" Data="@room2obj">
+            </ChartSeries>
+            <ChartSeries Color="#464646" Type="ChartSeriesType.Bar" Name="Salle 3" Data="@room3obj">
+            </ChartSeries>
+        </ChartSeriesItems>
+
+        <ChartValueAxes>
+            <ChartValueAxis Color="#464646"></ChartValueAxis>
+        </ChartValueAxes>
+
+        <ChartCategoryAxes>
+            <ChartCategoryAxis Color="#464646" Categories="@xAxisItems">
+                <ChartCategoryAxisLabels Color="#464646" Font="bold 12px 'Helvetica'"></ChartCategoryAxisLabels>
+            </ChartCategoryAxis>
+        </ChartCategoryAxes>
+    </TelerikChart>
+</div>
+ *@
+
+@code {
+    public Guid IdRoomSelected { get; set; }
+    public List<int> room1 = new List<int>(new int[12]);
+    public List<object> room1obj = new List<object> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+    public List<int> room2= new List<int>(new int[12]);
+    public List<object> room2obj = new List<object> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+    public List<int> room3 = new List<int>(new int[12]);
+    public List<object> room3obj = new List<object> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+    public string[] xAxisItems = new string[] { "Jan", "Fev", "Mar", "Avr", "Mai", "Juin", "Juil", "Aout", "Sept", "Oct", "Nov", "Dec" };
+
+  
+
+    List<object> LoadChart(List<int> room, List<object> roomObj)
+    {
+        var dates = BookingService.Bookings.Select(r => r.StartDate).ToList();
+        var dateMonths = dates.Select(e => e.Month);
+        List<int> countListMonths = dateMonths.ToList();
+
+        foreach(var month in countListMonths.Select((value, index) => new { value, index }))
+        {
+            room[month.value-1] += 1;
+        }
+        // monthGrp = await dates.GroupBy(e => DateTime.Parse(e).Month).Select(e => e.Count()).ToList();
+
+        roomObj = room.Cast<object>().ToList();
+
+        return roomObj;
+    }
+
+
+    protected async override Task OnInitializedAsync()
+    {
+
+        await RoomService.GetRooms();
+
+        foreach(var room in RoomService.Rooms)
+        {
+            if(room.Name.Equals("Salle 1"))
+            {
+                await BookingService.GetBookings(room.Id);
+                room1obj = LoadChart(room1, room1obj);
+            } 
+            else if(room.Name.Equals("Salle 2"))
+            {
+                await BookingService.GetBookings(room.Id);
+                room2obj = LoadChart(room2, room2obj);
+            }
+            else if(room.Name.Equals("Salle 3"))
+            {
+                await BookingService.GetBookings(room.Id);
+                room3obj = LoadChart(room3, room3obj);
+            } 
+        }
+
+    }
+}

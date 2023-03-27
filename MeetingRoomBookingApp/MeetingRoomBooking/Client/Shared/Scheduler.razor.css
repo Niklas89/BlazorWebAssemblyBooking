@@ -1,0 +1,21 @@
+﻿h1 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #183650;
+    margin-bottom:30px;
+}
+
+.upperTelerik {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+}
+
+    .upperTelerik .buttonTelerik {
+        position: absolute;
+        top: 25px;
+        right: 0;
+    }

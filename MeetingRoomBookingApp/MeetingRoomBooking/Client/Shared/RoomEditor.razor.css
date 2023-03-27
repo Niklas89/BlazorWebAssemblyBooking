@@ -1,0 +1,12 @@
+﻿.validation {
+    padding-top: 25px;
+}
+
+.userfield {
+    padding-top: 10px;
+}
+
+.image-thumbnail img {
+    width: 400px;
+    height: auto;
+}

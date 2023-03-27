@@ -1,0 +1,95 @@
+﻿@inject IBookingService BookingService
+@inject IRoomService RoomService
+@inject ITelerikStringLocalizer Localizer
+@using System.ComponentModel.DataAnnotations
+
+
+<EditForm Model="@Booking" OnValidSubmit="@SaveBooking">
+    <DataAnnotationsValidator/>
+    @*<TelerikValidationSummary />*@
+    <div class="form-row">
+        <div class="col">
+            <label> @Localizer[nameof(TelerikMessages.Subject)] : </label>
+            <TelerikTextBox @bind-Value="@Booking.Subject" Id="Subject" Width="60%" />
+            <TelerikValidationMessage For="@(() => Booking.Subject)" />
+            <TelerikValidationTooltip For="@(() => Booking.Subject)" TargetSelector="#Subject" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <label> @Localizer[nameof(TelerikMessages.AllDay)] :
+                <TelerikCheckBox Id="allDay" @bind-Value="@Booking.IsAllDay" />
+            </label>
+        </div>
+    </div>
+
+    @if (Booking.IsAllDay)
+    {
+        <div class="form-row">
+            <div class="col">
+                <label> @Localizer[nameof(TelerikMessages.Start_Date)] :</label>
+                <TelerikDatePicker @bind-Value="@Booking.StartDate" Id="StartDate" Width="40%"></TelerikDatePicker>
+            <TelerikValidationMessage For="@(() => Booking.StartDate)" />
+            <TelerikValidationTooltip For="@(() => Booking.StartDate)" TargetSelector="#StartDate" />
+            </div>
+            <div class="col">
+                <label>@Localizer[nameof(TelerikMessages.End_Date)]:</label>
+                <TelerikDatePicker @bind-Value="@Booking.EndDate" Id="EndDate" Width="40%"></TelerikDatePicker>
+            <TelerikValidationMessage For="@(() => Booking.EndDate)" />
+            <TelerikValidationTooltip For="@(() => Booking.EndDate)" TargetSelector="#EndDate" />
+            </div>
+        </div>
+                                
+
+    }
+    else
+    {   
+        <div class="form-row">
+            <div class="col">
+                <label> @Localizer[nameof(TelerikMessages.Start_Date)] : </label>
+                <TelerikDateTimePicker @bind-Value="@Booking.StartDate" Id="StartDate" Width="60%" />
+            <TelerikValidationMessage For="@(() => Booking.StartDate)" />
+            <TelerikValidationTooltip For="@(() => Booking.StartDate)" TargetSelector="#StartDate" />
+            </div>
+            <div class="col">
+                <label> @Localizer[nameof(TelerikMessages.End_Date)]: </label>
+                <TelerikDateTimePicker @bind-Value="@Booking.EndDate" Id="EndDate" Width="60%" />
+            <TelerikValidationMessage For="@(() => Booking.EndDate)" />
+            <TelerikValidationTooltip For="@(() => Booking.EndDate)" TargetSelector="#EndDate" />
+            </div>
+         </div>
+    }
+    
+       <div class="form-row">
+            <div class="col">
+                <label> @Localizer[nameof(TelerikMessages.Comment)] : </label>
+                <TelerikTextArea @bind-Value="@Booking.Comment" Size="md" />
+            </div>
+        </div>
+
+    <div class="form-row validation">
+        
+        <TelerikButton Icon="save" ThemeColor="primary" ButtonType="ButtonType.Submit">@Localizer[nameof(TelerikMessages.Create)]</TelerikButton>
+        <TelerikButton Icon="cancel"  OnClick="@CancelEditing" ButtonType="ButtonType.Button">@Localizer[nameof(TelerikMessages.Cancel)]</TelerikButton>
+    </div>
+
+</EditForm>
+
+@code{
+    [Parameter] public BookingDto Booking { get; set; }
+    [Parameter] public EventCallback<string> OnBookingChanged { get; set; }
+
+    async Task SaveBooking()
+    {
+        string roomName = RoomService.Rooms.Where(i => i.Id.Equals(Booking.IdRoom)).Select(r => r.Name).FirstOrDefault();
+        int capacityRoom = RoomService.Rooms.Where(i => i.Id.Equals(Booking.IdRoom)).Select(r => r.Capacity).FirstOrDefault();
+        await BookingService.SaveBooking(Booking, Booking.IdRoom, roomName, capacityRoom);
+         await OnBookingChanged.InvokeAsync(Booking.Subject);
+    }
+
+    async Task CancelEditing()
+    {
+        await OnBookingChanged.InvokeAsync(Booking.Subject);
+    }
+}
